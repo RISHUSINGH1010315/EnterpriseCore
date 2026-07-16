@@ -56,7 +56,7 @@ try {
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>Careers | EnterpriseCore Precision Engineering</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
@@ -164,6 +164,7 @@ try {
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+    
     <!-- Top Navigation -->
     <nav class="bg-surface/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-outline-variant/30 shadow-sm w-full">
         <div class="flex justify-between items-center h-[72px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
@@ -184,25 +185,6 @@ try {
                 <button onclick="toggleMobileMenu(true)" class="md:hidden flex items-center text-on-surface-variant hover:text-primary transition-colors focus:outline-none">
                     <span class="material-symbols-outlined text-[28px]">menu</span>
                 </button>
-            </div>
-        </div>
-        <!-- Mobile Menu Drawer -->
-        <div id="mobile-drawer" onclick="if(event.target===this) toggleMobileMenu(false)" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 md:hidden" style="opacity: 0; pointer-events: none;">
-            <div id="mobile-drawer-content" class="absolute right-0 top-0 bottom-0 w-64 bg-white shadow-xl transform translate-x-full transition-all duration-300 p-8 flex flex-col gap-6" style="transform: translateX(100%);">
-                <div class="flex justify-between items-center pb-4 border-b border-outline-variant/30">
-                    <span class="font-bold text-primary">Menu</span>
-                    <button onclick="toggleMobileMenu(false)" class="material-symbols-outlined text-on-surface-variant hover:text-primary focus:outline-none">close</button>
-                </div>
-                <div class="flex flex-col gap-4">
-                    <a class="font-body-md text-on-surface hover:text-primary transition-colors py-2 border-b border-outline-variant/10" href="services.php">Services</a>
-                    <a class="font-body-md text-on-surface hover:text-primary transition-colors py-2 border-b border-outline-variant/10" href="case-studies.php">Case Studies</a>
-                    <a class="font-body-md text-on-surface hover:text-primary transition-colors py-2 border-b border-outline-variant/10" href="industries.php">Industries</a>
-                    <a class="font-body-md text-on-surface hover:text-primary transition-colors py-2 border-b border-outline-variant/10" href="blog.php">Blog</a>
-                    <a class="font-body-md text-on-surface hover:text-primary transition-colors py-2" href="careers.php">Careers</a>
-                </div>
-                <div class="mt-auto">
-                    <a href="request-quote.php" class="block w-full bg-primary text-on-primary py-3 rounded-lg font-label-md text-center">Request Quote</a>
-                </div>
             </div>
         </div>
     </nav>
@@ -527,6 +509,27 @@ try {
             });
         });
     </script>
+    
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-drawer" onclick="if(event.target===this) toggleMobileMenu(false)" class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 md:hidden" style="opacity: 0; pointer-events: none; z-index: 9999;">
+        <div id="mobile-drawer-content" class="absolute right-0 top-0 bottom-0 w-64 bg-white shadow-xl transform translate-x-full transition-all duration-300 p-8 flex flex-col gap-6" style="transform: translateX(100%);">
+            <div class="flex justify-between items-center pb-4 border-b border-outline-variant/30">
+                <span class="font-bold text-primary">Menu</span>
+                <button onclick="toggleMobileMenu(false)" class="material-symbols-outlined text-on-surface-variant hover:text-primary focus:outline-none">close</button>
+            </div>
+            <div class="flex flex-col gap-4">
+                <a class="font-body-md text-on-surface hover:text-primary transition-colors py-2 border-b border-outline-variant/10" href="services.php">Services</a>
+                <a class="font-body-md text-on-surface hover:text-primary transition-colors py-2 border-b border-outline-variant/10" href="case-studies.php">Case Studies</a>
+                <a class="font-body-md text-on-surface hover:text-primary transition-colors py-2 border-b border-outline-variant/10" href="industries.php">Industries</a>
+                <a class="font-body-md text-on-surface hover:text-primary transition-colors py-2 border-b border-outline-variant/10" href="blog.php">Blog</a>
+                <a class="font-body-md text-on-surface hover:text-primary transition-colors py-2" href="careers.php">Careers</a>
+            </div>
+            <div class="mt-auto">
+                <a href="request-quote.php" class="block w-full bg-primary text-on-primary py-3 rounded-lg font-label-md text-center">Request Quote</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Mobile Menu Toggle Script -->
     <script>
         window.toggleMobileMenu = function(open) {
@@ -547,6 +550,7 @@ try {
     </script>
 </body>
 </html>
+
 
 
 

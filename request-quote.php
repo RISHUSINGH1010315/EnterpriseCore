@@ -495,36 +495,24 @@
     </script>
     <!-- Mobile Menu Toggle Script -->
     <script>
-        (() => {
-            const menuBtn = document.getElementById('mobile-menu-btn');
-            const closeBtn = document.getElementById('mobile-menu-close');
+        window.toggleMobileMenu = function(open) {
             const drawer = document.getElementById('mobile-drawer');
             const drawerContent = document.getElementById('mobile-drawer-content');
-
-            if (menuBtn && closeBtn && drawer && drawerContent) {
-                const openDrawer = () => {
-                    drawer.classList.remove('opacity-0', 'pointer-events-none');
-                    drawer.classList.add('opacity-100');
-                    drawerContent.classList.remove('translate-x-full');
-                    drawerContent.classList.add('translate-x-0');
-                };
-
-                const closeDrawer = () => {
-                    drawer.classList.remove('opacity-100');
-                    drawer.classList.add('opacity-0', 'pointer-events-none');
-                    drawerContent.classList.remove('translate-x-0');
-                    drawerContent.classList.add('translate-x-full');
-                };
-
-                menuBtn.addEventListener('click', openDrawer);
-                closeBtn.addEventListener('click', closeDrawer);
-                drawer.addEventListener('click', (e) => {
-                    if (e.target === drawer) closeDrawer();
-                });
+            if (drawer && drawerContent) {
+                if (open) {
+                    drawer.style.opacity = '1';
+                    drawer.style.pointerEvents = 'auto';
+                    drawerContent.style.transform = 'translateX(0)';
+                } else {
+                    drawer.style.opacity = '0';
+                    drawer.style.pointerEvents = 'none';
+                    drawerContent.style.transform = 'translateX(100%)';
+                }
             }
-        })();
+        };
     </script>
 </body>
 </html>
+
 
 

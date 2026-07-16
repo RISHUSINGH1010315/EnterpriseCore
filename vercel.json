@@ -2,9 +2,6 @@
   "functions": {
     "api/**/*.php": {
       "runtime": "vercel-php@0.6.0"
-    },
-    "*.php": {
-      "runtime": "vercel-php@0.6.0"
     }
   },
   "routes": [
@@ -13,16 +10,16 @@
       "dest": "/$1/$2"
     },
     {
-      "src": "/(services|industries|case-studies|blog|careers|request-quote)",
-      "dest": "/$1.php"
+      "src": "/api/submit-quote",
+      "dest": "/api/submit-quote.php"
     },
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "src": "/api/submit-application",
+      "dest": "/api/submit-application.php"
     },
     {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "/api/index.php"
     }
   ]
 }

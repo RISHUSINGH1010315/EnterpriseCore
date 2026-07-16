@@ -164,26 +164,45 @@ try {
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
-    <!-- TopNavBar -->
-    <nav class="bg-surface/90 backdrop-blur-md dark:bg-on-surface/90 font-body-md text-body-md docked full-width top-0 sticky border-b border-outline-variant/30 shadow-sm z-50">
+            <!-- Top Navigation -->
+    <nav class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm">
         <div class="flex justify-between items-center h-[72px] px-margin-desktop max-w-container-max mx-auto w-full">
-            <div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">
-                <a href="index.php">EnterpriseCore</a>
+            <div class="flex items-center gap-2">
+                <a href="index.php" class="font-headline-md text-headline-md font-bold text-primary">EnterpriseCore</a>
             </div>
             <div class="hidden md:flex items-center gap-8">
-                <a href="services.php" class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors">Services</a>
-                <a href="case-studies.php" class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors">Case Studies</a>
-                <a href="industries.php" class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors">Industries</a>
-                <a href="blog.php" class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors">Blog</a>
-                <a href="careers.php" class="text-primary border-b-2 border-primary pb-1">Careers</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="services.php">Services</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="case-studies.php">Case Studies</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="industries.php">Industries</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="blog.php">Blog</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="careers.php">Careers</a>
             </div>
             <div class="flex items-center gap-4">
-                <a href="request-quote.php" class="hidden md:block px-6 py-2 bg-primary text-on-primary font-label-md rounded-lg shadow-sm hover:shadow-md transition-all active:scale-95 text-center">
-                    Request Quote
-                </a>
-                <button class="md:hidden text-primary">
-                    <span class="material-symbols-outlined">menu</span>
+                <button class="material-symbols-outlined text-on-surface-variant hover:text-primary">search</button>
+                <a href="request-quote.php" class="hidden sm:block bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md text-label-md hover:shadow-lg transition-all active:scale-95 text-center">Request Quote</a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden flex items-center text-on-surface-variant hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-[28px]">menu</span>
                 </button>
+            </div>
+        </div>
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-drawer" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 md:hidden">
+            <div id="mobile-drawer-content" class="absolute right-0 top-0 bottom-0 w-64 bg-white shadow-xl transform translate-x-full transition-transform duration-300 p-8 flex flex-col gap-6">
+                <div class="flex justify-between items-center pb-4 border-b border-outline-variant/30">
+                    <span class="font-bold text-primary">Menu</span>
+                    <button id="mobile-menu-close" class="material-symbols-outlined text-on-surface-variant hover:text-primary">close</button>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <a class="font-body-md text-on-surface hover:text-primary transition-colors py-2 border-b border-outline-variant/10" href="services.php">Services</a>
+                    <a class="font-body-md text-on-surface hover:text-primary transition-colors py-2 border-b border-outline-variant/10" href="case-studies.php">Case Studies</a>
+                    <a class="font-body-md text-on-surface hover:text-primary transition-colors py-2 border-b border-outline-variant/10" href="industries.php">Industries</a>
+                    <a class="font-body-md text-on-surface hover:text-primary transition-colors py-2 border-b border-outline-variant/10" href="blog.php">Blog</a>
+                    <a class="font-body-md text-on-surface hover:text-primary transition-colors py-2" href="careers.php">Careers</a>
+                </div>
+                <div class="mt-auto">
+                    <a href="request-quote.php" class="block w-full bg-primary text-on-primary py-3 rounded-lg font-label-md text-center">Request Quote</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -508,5 +527,37 @@ try {
             });
         });
     </script>
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('mobile-menu-close');
+            const drawer = document.getElementById('mobile-drawer');
+            const drawerContent = document.getElementById('mobile-drawer-content');
+
+            if (menuBtn && closeBtn && drawer && drawerContent) {
+                const openDrawer = () => {
+                    drawer.classList.remove('opacity-0', 'pointer-events-none');
+                    drawer.classList.add('opacity-100');
+                    drawerContent.classList.remove('translate-x-full');
+                    drawerContent.classList.add('translate-x-0');
+                };
+
+                const closeDrawer = () => {
+                    drawer.classList.remove('opacity-100');
+                    drawer.classList.add('opacity-0', 'pointer-events-none');
+                    drawerContent.classList.remove('translate-x-0');
+                    drawerContent.classList.add('translate-x-full');
+                };
+
+                menuBtn.addEventListener('click', openDrawer);
+                closeBtn.addEventListener('click', closeDrawer);
+                drawer.addEventListener('click', (e) => {
+                    if (e.target === drawer) closeDrawer();
+                });
+            }
+        });
+    </script>
 </body>
 </html>
+

@@ -493,5 +493,37 @@
             });
         });
     </script>
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('mobile-menu-close');
+            const drawer = document.getElementById('mobile-drawer');
+            const drawerContent = document.getElementById('mobile-drawer-content');
+
+            if (menuBtn && closeBtn && drawer && drawerContent) {
+                const openDrawer = () => {
+                    drawer.classList.remove('opacity-0', 'pointer-events-none');
+                    drawer.classList.add('opacity-100');
+                    drawerContent.classList.remove('translate-x-full');
+                    drawerContent.classList.add('translate-x-0');
+                };
+
+                const closeDrawer = () => {
+                    drawer.classList.remove('opacity-100');
+                    drawer.classList.add('opacity-0', 'pointer-events-none');
+                    drawerContent.classList.remove('translate-x-0');
+                    drawerContent.classList.add('translate-x-full');
+                };
+
+                menuBtn.addEventListener('click', openDrawer);
+                closeBtn.addEventListener('click', closeDrawer);
+                drawer.addEventListener('click', (e) => {
+                    if (e.target === drawer) closeDrawer();
+                });
+            }
+        });
+    </script>
 </body>
 </html>
+

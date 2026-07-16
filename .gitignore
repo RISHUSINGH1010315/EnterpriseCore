@@ -1,0 +1,6 @@
+# Ignore zip archive and raw extracted folder
+stitch_enterprise_software_company_cms.zip
+stitch_enterprise_software_company_cms/
+
+# Do NOT ignore the seeded database file so Vercel can read it
+# database/enterprise.db

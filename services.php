@@ -1,0 +1,308 @@
+<?php
+require_once 'config/db.php';
+
+// Fetch services from database
+$services = [];
+try {
+    $stmt = $pdo->query("SELECT * FROM services WHERE is_active = TRUE ORDER BY id ASC");
+    $services = $stmt->fetchAll();
+} catch (PDOException $e) {
+    // Fallback static array if DB not initialized
+    $services = [
+        [
+            'title' => 'Custom Web Development',
+            'description' => 'High-performance, scalable web applications built with modern frameworks to drive your digital transformation and user engagement.',
+            'icon' => 'code'
+        ],
+        [
+            'title' => 'ERP & CRM Solutions',
+            'description' => 'Streamline operations and deepen customer relationships with custom-integrated enterprise resource planning systems.',
+            'icon' => 'hub'
+        ],
+        [
+            'title' => 'AI & Machine Learning',
+            'description' => 'Leverage predictive analytics and intelligent automation to unlock new efficiencies and competitive advantages.',
+            'icon' => 'psychology'
+        ],
+        [
+            'title' => 'Cloud Infrastructure',
+            'description' => 'Resilient, highly-available cloud architectures and DevOps practices that ensure 99.99% uptime for global operations.',
+            'icon' => 'cloud_done'
+        ],
+        [
+            'title' => 'Cybersecurity & Compliance',
+            'description' => 'Bank-grade security protocols and global compliance auditing to protect your most sensitive enterprise data assets.',
+            'icon' => 'admin_panel_settings'
+        ],
+        [
+            'title' => 'UI/UX Strategy & Design',
+            'description' => 'User-centric design systems and interaction strategies that bridge the gap between complex functionality and intuitive use.',
+            'icon' => 'draw'
+        ]
+    ];
+}
+?>
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Services | EnterpriseCore - Precision Engineering</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#d8e2ff",
+                      "on-primary-fixed": "#00174b",
+                      "primary": "#004ac6",
+                      "inverse-on-surface": "#edf0ff",
+                      "surface-variant": "#dce2f7",
+                      "secondary-container": "#2170e4",
+                      "background": "#f9f9ff",
+                      "tertiary-fixed-dim": "#89ceff",
+                      "surface-container-highest": "#dce2f7",
+                      "on-surface-variant": "#434655",
+                      "primary-container": "#2563eb",
+                      "surface-tint": "#0053db",
+                      "surface-container-low": "#f1f3ff",
+                      "tertiary-fixed": "#c9e6ff",
+                      "on-secondary-container": "#fefcff",
+                      "on-surface": "#141b2b",
+                      "surface-bright": "#f9f9ff",
+                      "primary-fixed": "#dbe1ff",
+                      "surface-container": "#e9edff",
+                      "secondary-fixed-dim": "#adc6ff",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "surface-container-high": "#e1e8fd",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#004395",
+                      "on-background": "#141b2b",
+                      "on-primary": "#ffffff",
+                      "tertiary": "#005a82",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "inverse-primary": "#b4c5ff",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#004c6e",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "inverse-surface": "#293040",
+                      "outline-variant": "#c3c6d7",
+                      "surface-dim": "#d3daef",
+                      "secondary": "#0058be",
+                      "on-primary-container": "#eeefff",
+                      "surface": "#f9f9ff",
+                      "on-error": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed": "#001a42",
+                      "on-tertiary-fixed": "#001e2f",
+                      "outline": "#737686",
+                      "on-tertiary-container": "#e4f2ff",
+                      "tertiary-container": "#0074a6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "base": "8px",
+                      "margin-desktop": "48px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "section-padding": "96px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Poppins"],
+                      "headline-xl": ["Poppins"],
+                      "label-md": ["Poppins"],
+                      "body-lg": ["Poppins"],
+                      "headline-lg": ["Poppins"],
+                      "display-lg-mobile": ["Poppins"],
+                      "body-md": ["Poppins"],
+                      "display-lg": ["Poppins"],
+                      "headline-md": ["Poppins"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-xl": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+        .mesh-bg {
+            background-color: #ffffff;
+            background-image: radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.05) 0px, transparent 50%), 
+                              radial-gradient(at 100% 100%, rgba(37, 99, 235, 0.03) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md animate-reveal">
+    <!-- Top Navigation Shell -->
+    <header class="bg-surface/90 backdrop-blur-md dark:bg-on-surface/90 border-b border-outline-variant/30 shadow-sm fixed top-0 left-0 right-0 z-50">
+        <div class="flex justify-between items-center h-[72px] px-margin-desktop max-w-container-max mx-auto w-full">
+            <div class="flex items-center gap-base">
+                <a href="index.php" class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">EnterpriseCore</a>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="font-body-md text-body-md text-primary dark:text-primary-fixed border-b-2 border-primary pb-1" href="services.php">Services</a>
+                <a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="case-studies.php">Case Studies</a>
+                <a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="industries.php">Industries</a>
+                <a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="blog.php">Blog</a>
+                <a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="careers.php">Careers</a>
+            </nav>
+            <div class="flex items-center gap-gutter">
+                <button class="hidden md:block material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">search</button>
+                <a href="request-quote.php" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md text-label-md hover:shadow-md transition-all active:scale-95 text-center">Request Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-[72px]">
+        <!-- Hero Section -->
+        <section class="relative min-h-[50vh] flex items-center overflow-hidden mesh-bg">
+            <div class="absolute inset-0 z-0"></div>
+            <div class="relative z-10 max-w-container-max mx-auto px-margin-desktop py-section-padding w-full">
+                <div class="max-w-3xl">
+                    <span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-label-sm font-label-sm mb-6 inline-block">OUR EXPERTISE</span>
+                    <h1 class="font-display-lg text-display-lg mb-8 tracking-tight">Solutions Tailored for Global Scale</h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-2xl">
+                        Empowering the world's most ambitious organizations with precision-engineered digital architecture and future-ready enterprise solutions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="bg-surface-container-lowest py-section-padding">
+            <div class="max-w-container-max mx-auto px-margin-desktop">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+                    <?php foreach ($services as $service): ?>
+                        <div class="service-card group bg-surface border border-outline-variant/30 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300">
+                            <div class="w-12 h-12 bg-primary-container/10 text-primary rounded-lg flex items-center justify-center mb-6">
+                                <span class="material-symbols-outlined text-3xl"><?php echo htmlspecialchars($service['icon'] ?? 'code'); ?></span>
+                            </div>
+                            <h3 class="font-headline-md text-headline-md mb-4 group-hover:text-primary transition-colors"><?php echo htmlspecialchars($service['title']); ?></h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                                <?php echo htmlspecialchars($service['description']); ?>
+                            </p>
+                            <a class="flex items-center gap-2 text-primary font-label-md text-label-md group-hover:gap-4 transition-all" href="request-quote.php">
+                                Learn More <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA / Architect Section -->
+        <section class="bg-surface py-section-padding border-t border-outline-variant/10">
+            <div class="max-w-container-max mx-auto px-margin-desktop">
+                <div class="bg-on-surface rounded-xl p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-gutter overflow-hidden relative">
+                    <div class="absolute top-0 right-0 w-1/2 h-full opacity-20">
+                        <div class="w-full h-full bg-cover" data-alt="Network grid pattern" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCr0nDVRRWLFnqej855eCkDKovHyEN69guOTdQiT2TSaZzOVxROjiXbrJBpHLLeawGsu6HgkFSJ4LqKpkcH8kgplzpSAf7JjbFmD1pFM3i6nlHW5LDLBKMCne2w-PjRSmAnv0-xdFTk8uriN5TCdMrYZrlAKYboU2XSyrmgV1nO4pP927eCPDnYx_oh5JyTsE3q_89Yew_3n4Pi4Yt-2wtCZAGB5Z1fYPCPSSNki0gZbXp26FSuBK8oSA')"></div>
+                    </div>
+                    <div class="relative z-10 max-w-2xl text-center md:text-left">
+                        <h2 class="font-headline-xl text-headline-xl text-on-primary mb-6">Ready to Architect Your Future?</h2>
+                        <p class="font-body-lg text-body-lg text-surface-variant mb-8">
+                            Our lead architects are available for deep-dive consultations to assess your current landscape and define a roadmap for global scale.
+                        </p>
+                        <a href="request-quote.php" class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-3 mx-auto md:mx-0 w-fit">
+                            Speak with an Enterprise Architect
+                            <span class="material-symbols-outlined">chat</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest dark:bg-on-surface border-t border-outline-variant">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
+            <div class="md:col-span-2">
+                <span class="font-headline-md text-headline-md font-bold text-primary block mb-6">EnterpriseCore</span>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                    The leading global provider of precision-engineered enterprise software solutions, helping organizations navigate complexity through innovation.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-label-md text-label-md text-on-surface font-bold mb-6">Services</h4>
+                <ul class="space-y-4">
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="services.php">Consulting</a></li>
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="services.php">Development</a></li>
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="services.php">Security</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-label-md text-label-md text-on-surface font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-4">
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="case-studies.php">Case Studies</a></li>
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="request-quote.php">Contact</a></li>
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="careers.php">Careers</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-label-md text-label-md text-on-surface font-bold mb-6">Legal</h4>
+                <ul class="space-y-4">
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">Privacy Policy</a></li>
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-container-max mx-auto px-margin-desktop py-8 border-t border-outline-variant/30 text-center md:text-left">
+            <p class="font-body-md text-body-md text-on-surface-variant">© 2024 EnterpriseCore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.service-card');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('opacity-100', 'translate-y-0');
+                            entry.target.classList.remove('opacity-0', 'translate-y-10');
+                        }, index * 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => {
+                card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700', 'ease-out');
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

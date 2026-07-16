@@ -1,0 +1,7 @@
+# EnterpriseCore SEO Friendly URL Rewriting
+RewriteEngine On
+
+# If requested file does not end in .php and matches a .php file, rewrite it
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

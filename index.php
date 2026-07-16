@@ -161,24 +161,26 @@
 <!-- Hero Section -->
     <header class="relative overflow-hidden bg-surface-container-lowest pt-20 pb-32">
         <div class="absolute inset-0 z-0 opacity-40"></div>
-        <div class="max-w-container-max mx-auto px-margin-desktop relative z-10 grid lg:grid-cols-2 gap-gutter items-center">
-            <div class="space-y-8">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 flex flex-col gap-16">
+            <!-- Hero Content -->
+            <div class="flex flex-col items-center text-center space-y-8 max-w-3xl mx-auto w-full">
                 <div class="inline-flex items-center gap-2 px-3 py-1 bg-primary-container/10 text-primary rounded-full border border-primary/20">
                     <span class="material-symbols-outlined text-[18px]">verified</span>
                     <span class="text-label-sm font-label-sm uppercase tracking-wider">Enterprise-Grade Performance</span>
                 </div>
-                <h1 class="font-display-lg text-display-lg leading-tight">
+                <h1 class="font-display-lg text-display-lg leading-tight text-center">
                     Architecting the Future of <span class="text-primary">Enterprise Solutions</span>
                 </h1>
-                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl text-center">
                     We deliver precision-engineered digital infrastructure that scales with your ambition. Transforming complex business challenges into seamless technological advantages.
                 </p>
-                <div class="flex flex-wrap gap-4 pt-4">
+                <div class="flex flex-wrap justify-center gap-4 pt-4">
                     <a href="request-quote.php" class="bg-primary text-on-primary px-8 py-4 rounded-xl font-headline-md text-body-md hover:shadow-xl transition-all hover:-translate-y-1 text-center inline-block">Get Started</a>
                     <a href="case-studies.php" class="border border-outline-variant text-primary px-8 py-4 rounded-xl font-headline-md text-body-md hover:bg-surface-container-high transition-all text-center inline-block">View Portfolio</a>
                 </div>
             </div>
-            <div class="relative w-full mt-12 lg:mt-0 animate-float">
+            <!-- Showcase Video Banner -->
+            <div class="relative w-full max-w-5xl mx-auto animate-float">
                 <div class="relative z-10 aspect-video rounded-3xl overflow-hidden bg-surface-container-high shadow-2xl">
                     <!-- Embedded Video Playing As Hero Media Asset -->
                     <video class="w-full h-full object-cover" autoplay loop muted playsinline>

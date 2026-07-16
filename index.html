@@ -159,7 +159,7 @@
     </nav>
 
 <!-- Hero Section -->
-    <header class="relative overflow-hidden bg-surface-container-lowest pt-20 pb-32">
+    <header class="relative overflow-hidden bg-surface-container-lowest pt-20 pb-0">
         <div class="absolute inset-0 z-0 opacity-40"></div>
         <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 flex flex-col gap-16">
             <!-- Hero Content -->
@@ -179,18 +179,15 @@
                     <a href="case-studies.html" class="border border-outline-variant text-primary px-8 py-4 rounded-xl font-headline-md text-body-md hover:bg-surface-container-high transition-all text-center inline-block">View Portfolio</a>
                 </div>
             </div>
-            <!-- Showcase Video Banner -->
-            <div class="relative w-full max-w-5xl mx-auto animate-float">
-                <div class="relative z-10 aspect-video rounded-3xl overflow-hidden bg-surface-container-high shadow-2xl">
-                    <!-- Embedded Video Playing As Hero Media Asset -->
-                    <video class="w-full h-full object-cover" autoplay loop muted playsinline>
-                        <source src="assets/videos/hero_video.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <!-- Abstract Floating elements -->
-                <div class="absolute -top-10 -right-10 w-40 h-40 bg-secondary-container/20 rounded-full blur-3xl"></div>
-                <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl"></div>
+        </div>
+        <!-- Showcase Video Banner (Full Screen Edge-to-Edge Width) -->
+        <div class="w-full mt-16 relative z-10">
+            <div class="w-full aspect-video md:aspect-[21/9] bg-surface-container-high overflow-hidden shadow-2xl">
+                <!-- Embedded Video Playing As Hero Media Asset -->
+                <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+                    <source src="assets/videos/hero_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </header>

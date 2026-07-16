@@ -178,7 +178,7 @@
                     <a href="case-studies.php" class="border border-outline-variant text-primary px-8 py-4 rounded-xl font-headline-md text-body-md hover:bg-surface-container-high transition-all text-center inline-block">View Portfolio</a>
                 </div>
             </div>
-            <div class="hidden lg:block relative">
+            <div class="relative w-full mt-12 lg:mt-0">
                 <div class="relative z-10 animate-float rounded-3xl overflow-hidden shadow-2xl">
                     <!-- Embedded Video Playing As Hero Media Asset -->
                     <video class="w-full h-auto object-cover" autoplay loop muted playsinline>

@@ -569,7 +569,7 @@
     </script>
     <!-- Mobile Menu Toggle Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        (() => {
             const menuBtn = document.getElementById('mobile-menu-btn');
             const closeBtn = document.getElementById('mobile-menu-close');
             const drawer = document.getElementById('mobile-drawer');
@@ -596,8 +596,9 @@
                     if (e.target === drawer) closeDrawer();
                 });
             }
-        });
+        })();
     </script>
 </body>
 </html>
+
 

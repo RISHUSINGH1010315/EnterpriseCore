@@ -160,9 +160,9 @@ try {
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body-md animate-reveal">
-                <!-- Top Navigation -->
-    <nav class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm">
-        <div class="flex justify-between items-center h-[72px] px-margin-desktop max-w-container-max mx-auto w-full">
+    <!-- Top Navigation -->
+    <nav class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm w-full">
+        <div class="flex justify-between items-center h-[72px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
             <div class="flex items-center gap-2">
                 <a href="index.php" class="font-headline-md text-headline-md font-bold text-primary">EnterpriseCore</a>
             </div>
@@ -203,7 +203,7 @@ try {
         </div>
     </nav>
 
-    <main class="pt-[72px]">
+<main class="pt-[72px]">
         <!-- Hero Section -->
         <section class="relative min-h-[50vh] flex items-center overflow-hidden mesh-bg">
             <div class="absolute inset-0 z-0"></div>
@@ -347,6 +347,7 @@ try {
     </script>
 </body>
 </html>
+
 
 
 

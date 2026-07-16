@@ -229,9 +229,9 @@ if (!empty($all_blogs)) {
     </style>
 </head>
 <body class="bg-surface text-on-surface">
-                <!-- Top Navigation -->
-    <nav class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm">
-        <div class="flex justify-between items-center h-[72px] px-margin-desktop max-w-container-max mx-auto w-full">
+    <!-- Top Navigation -->
+    <nav class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm w-full">
+        <div class="flex justify-between items-center h-[72px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
             <div class="flex items-center gap-2">
                 <a href="index.php" class="font-headline-md text-headline-md font-bold text-primary">EnterpriseCore</a>
             </div>
@@ -272,7 +272,7 @@ if (!empty($all_blogs)) {
         </div>
     </nav>
 
-    <main>
+<main>
         <!-- Featured Post Hero Section -->
         <?php if ($featured_post): ?>
             <section class="relative pt-section-padding pb-16 px-margin-desktop max-w-container-max mx-auto">
@@ -434,6 +434,7 @@ if (!empty($all_blogs)) {
     </script>
 </body>
 </html>
+
 
 
 

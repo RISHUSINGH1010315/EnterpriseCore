@@ -1,0 +1,436 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#d8e2ff",
+                    "on-primary-fixed": "#00174b",
+                    "primary": "#004ac6",
+                    "inverse-on-surface": "#edf0ff",
+                    "surface-variant": "#dce2f7",
+                    "secondary-container": "#2170e4",
+                    "background": "#f9f9ff",
+                    "tertiary-fixed-dim": "#89ceff",
+                    "surface-container-highest": "#dce2f7",
+                    "on-surface-variant": "#434655",
+                    "primary-container": "#2563eb",
+                    "surface-tint": "#0053db",
+                    "surface-container-low": "#f1f3ff",
+                    "tertiary-fixed": "#c9e6ff",
+                    "on-secondary-container": "#fefcff",
+                    "on-surface": "#141b2b",
+                    "surface-bright": "#f9f9ff",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container": "#e9edff",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#e1e8fd",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#004395",
+                    "on-background": "#141b2b",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#005a82",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "inverse-primary": "#b4c5ff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#004c6e",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "inverse-surface": "#293040",
+                    "outline-variant": "#c3c6d7",
+                    "surface-dim": "#d3daef",
+                    "secondary": "#0058be",
+                    "on-primary-container": "#eeefff",
+                    "surface": "#f9f9ff",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#001a42",
+                    "on-tertiary-fixed": "#001e2f",
+                    "outline": "#737686",
+                    "on-tertiary-container": "#e4f2ff",
+                    "tertiary-container": "#0074a6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "margin-desktop": "48px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "section-padding": "96px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Poppins"],
+                    "headline-xl": ["Poppins"],
+                    "label-md": ["Poppins"],
+                    "body-lg": ["Poppins"],
+                    "headline-lg": ["Poppins"],
+                    "display-lg-mobile": ["Poppins"],
+                    "body-md": ["Poppins"],
+                    "display-lg": ["Poppins"],
+                    "headline-md": ["Poppins"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm">
+        <div class="flex justify-between items-center h-[72px] px-margin-desktop max-w-container-max mx-auto w-full">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="font-headline-md text-headline-md font-bold text-primary">EnterpriseCore</a>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="case-studies.html">Case Studies</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="industries.html">Industries</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="blog.html">Blog</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="careers.html">Careers</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="material-symbols-outlined text-on-surface-variant hover:text-primary">search</button>
+                <a href="request-quote.html" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md text-label-md hover:shadow-lg transition-all active:scale-95 text-center">Request Quote</a>
+            </div>
+        </div>
+    </nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[60vh] flex items-center overflow-hidden bg-surface py-section-padding">
+<div class="absolute inset-0 z-0">
+
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop w-full grid md:grid-cols-2 gap-gutter items-center">
+<div class="space-y-6">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary font-label-sm rounded-full tracking-wider">CAREERS AT ENTERPRISECORE</span>
+<h1 class="font-display-lg text-display-lg leading-tight text-on-surface">
+                        Build the Future <br><span class="text-primary">with Us</span>.
+                    </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+                        Join a global team of precision engineers and innovators. We're solving complex problems with cutting-edge technology and a commitment to excellence.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<a class="px-8 py-4 bg-primary text-on-primary font-label-md rounded-lg shadow-lg hover:bg-primary-container transition-all hover:-translate-y-1" href="#jobs">
+                            View Openings
+                        </a>
+<a class="px-8 py-4 border border-outline text-primary font-label-md rounded-lg hover:bg-surface-container-low transition-all" href="#values">
+                            Our Values
+                        </a>
+</div>
+</div>
+<div class="hidden md:block relative">
+<div class="rounded-xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+<img class="w-full h-[500px] object-cover" data-alt="A professional, bright workspace with high-end architecture, where diverse professionals are collaborating in a modern glass-walled office environment. The lighting is crisp and airy, emphasizing a light-mode enterprise aesthetic with corporate blue and white tones. The scene captures a feeling of high-level innovation and precision engineering culture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt-oVusdvHc_3e10uUB-e0WQ8FsG7wRCOdi3ABZSwz_iniS74UMIAylGv-w6-dO9snqMBQl4qg253jNCHVv_2swAQlKT9XeTBbmtPEio3eX9jmC2nE_JUwknpiEB3480_UY0R6bTDnZlHBBUlzPCk8KL5n0iJSs06mpWy2M50lOx9r9FC4T5VP8PRoWbRPqt-HLDqOq6RbzM1LFxJqDmaRW4qlHPRXxEYSMAVPIy31gLxU85GUGLGiQA">
+</div>
+<div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-xl shadow-xl animate-bounce">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<div>
+<div class="font-bold text-headline-sm">50+</div>
+<div class="text-label-sm opacity-70 uppercase">New Openings</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Values Section -->
+<section class="py-section-padding bg-surface-container-lowest" id="values">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Why Work Here?</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                        We provide an environment where your skills are sharpened and your contributions define the next generation of enterprise core technologies.
+                    </p>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<!-- Innovation -->
+<div class="group p-10 bg-white border border-outline-variant hover:border-primary transition-all duration-300 rounded-xl hover:shadow-xl">
+<div class="w-16 h-16 rounded-2xl bg-primary-container/10 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined !text-4xl" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Innovation</h3>
+<p class="text-on-surface-variant font-body-md">
+                            Work with the latest tech stacks and contribute to patents that drive global industry standards. We encourage experimentation and creative problem solving at every level.
+                        </p>
+</div>
+<!-- Growth -->
+<div class="group p-10 bg-white border border-outline-variant hover:border-primary transition-all duration-300 rounded-xl hover:shadow-xl">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container/10 flex items-center justify-center text-secondary mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined !text-4xl" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Growth</h3>
+<p class="text-on-surface-variant font-body-md">
+                            Clear career paths, continuous learning stipends, and mentorship from industry veterans. Your trajectory at EnterpriseCore is limited only by your ambition.
+                        </p>
+</div>
+<!-- Impact -->
+<div class="group p-10 bg-white border border-outline-variant hover:border-primary transition-all duration-300 rounded-xl hover:shadow-xl">
+<div class="w-16 h-16 rounded-2xl bg-tertiary-container/10 flex items-center justify-center text-tertiary mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined !text-4xl" style="font-variation-settings: 'FILL' 1;">public</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Impact</h3>
+<p class="text-on-surface-variant font-body-md">
+                            Our solutions power 80% of Fortune 500 infrastructure. Your code and designs literally move the world forward, making a tangible difference in global operations.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Job Listings -->
+<section class="py-section-padding bg-surface" id="jobs">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="space-y-2">
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Open Positions</h2>
+<p class="text-on-surface-variant font-body-md">Find your next challenge in our diverse teams.</p>
+</div>
+<div class="flex gap-4">
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-outline material-symbols-outlined">search</span>
+<input class="pl-10 pr-4 py-2 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none" placeholder="Search roles..." type="text">
+</div>
+</div>
+</div>
+<div class="grid gap-4">
+<!-- Job Card 1 -->
+<div class="group flex flex-col md:flex-row md:items-center justify-between p-6 bg-white rounded-xl border border-outline-variant hover:shadow-md transition-all">
+<div class="space-y-2">
+<h3 class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Senior PHP Developer</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant font-label-sm rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined !text-sm">location_on</span> Remote / New York
+                                </span>
+<span class="px-2 py-1 bg-primary-container/10 text-primary font-label-sm rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined !text-sm">code</span> Engineering
+                                </span>
+<span class="px-2 py-1 bg-tertiary-container/10 text-tertiary font-label-sm rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined !text-sm">schedule</span> Full-time
+                                </span>
+</div>
+</div>
+<div class="mt-6 md:mt-0">
+<a class="px-6 py-3 border border-primary text-primary font-label-md rounded-lg hover:bg-primary hover:text-on-primary transition-all" href="#apply" onclick="document.getElementById('job_role').value='Senior PHP Developer'">
+                                Apply Now
+                            </a>
+</div>
+</div>
+<!-- Job Card 2 -->
+<div class="group flex flex-col md:flex-row md:items-center justify-between p-6 bg-white rounded-xl border border-outline-variant hover:shadow-md transition-all">
+<div class="space-y-2">
+<h3 class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Cloud Architect</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant font-label-sm rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined !text-sm">location_on</span> London / Hybrid
+                                </span>
+<span class="px-2 py-1 bg-primary-container/10 text-primary font-label-sm rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined !text-sm">cloud</span> Infrastructure
+                                </span>
+<span class="px-2 py-1 bg-tertiary-container/10 text-tertiary font-label-sm rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined !text-sm">schedule</span> Full-time
+                                </span>
+</div>
+</div>
+<div class="mt-6 md:mt-0">
+<a class="px-6 py-3 border border-primary text-primary font-label-md rounded-lg hover:bg-primary hover:text-on-primary transition-all" href="#apply" onclick="document.getElementById('job_role').value='Cloud Architect'">
+                                Apply Now
+                            </a>
+</div>
+</div>
+<!-- Job Card 3 -->
+<div class="group flex flex-col md:flex-row md:items-center justify-between p-6 bg-white rounded-xl border border-outline-variant hover:shadow-md transition-all">
+<div class="space-y-2">
+<h3 class="font-headline-md text-headline-md group-hover:text-primary transition-colors">UI/UX Designer</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant font-label-sm rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined !text-sm">location_on</span> San Francisco / On-site
+                                </span>
+<span class="px-2 py-1 bg-primary-container/10 text-primary font-label-sm rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined !text-sm">palette</span> Design
+                                </span>
+<span class="px-2 py-1 bg-tertiary-container/10 text-tertiary font-label-sm rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined !text-sm">schedule</span> Full-time
+                                </span>
+</div>
+</div>
+<div class="mt-6 md:mt-0">
+<a class="px-6 py-3 border border-primary text-primary font-label-md rounded-lg hover:bg-primary hover:text-on-primary transition-all" href="#apply" onclick="document.getElementById('job_role').value='UI/UX Designer'">
+                                Apply Now
+                            </a>
+</div>
+</div>
+<!-- Job Card 4 -->
+<div class="group flex flex-col md:flex-row md:items-center justify-between p-6 bg-white rounded-xl border border-outline-variant hover:shadow-md transition-all">
+<div class="space-y-2">
+<h3 class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Marketing Operations Manager</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant font-label-sm rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined !text-sm">location_on</span> Remote / Singapore
+                                </span>
+<span class="px-2 py-1 bg-primary-container/10 text-primary font-label-sm rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined !text-sm">campaign</span> Marketing
+                                </span>
+<span class="px-2 py-1 bg-tertiary-container/10 text-tertiary font-label-sm rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined !text-sm">schedule</span> Full-time
+                                </span>
+</div>
+</div>
+<div class="mt-6 md:mt-0">
+<a class="px-6 py-3 border border-primary text-primary font-label-md rounded-lg hover:bg-primary hover:text-on-primary transition-all" href="#apply" onclick="document.getElementById('job_role').value='Marketing Operations Manager'">
+                                Apply Now
+                            </a>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<button class="text-primary font-label-md hover:underline flex items-center gap-2 mx-auto transition-all">
+                        Load More Roles <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Application Form -->
+<section class="py-section-padding bg-surface-container-low" id="apply">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid lg:grid-cols-2 gap-section-padding items-start">
+<div class="space-y-8">
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Ready to start?</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+                            Fill out the form to the right and our talent acquisition team will review your application within 48 hours. We're looking for passionate individuals who value precision and engineering excellence.
+                        </p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0">1</div>
+<div>
+<h4 class="font-bold text-on-surface">Initial Review</h4>
+<p class="text-on-surface-variant text-sm">Our hiring managers review every application manually.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0">2</div>
+<div>
+<h4 class="font-bold text-on-surface">Technical Assessment</h4>
+<p class="text-on-surface-variant text-sm">Relevant skill-based evaluations to showcase your expertise.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0">3</div>
+<div class="">
+<h4 class="font-bold text-on-surface">Final Interview</h4>
+<p class="text-on-surface-variant text-sm">Meet the team and discuss how you fit into EnterpriseCore.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-outline-variant">
+<form class="space-y-6"><div class="grid md:grid-cols-2 gap-6"><div class="space-y-2"><label class="font-label-md text-on-surface">Full Name</label><input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="John Doe" required="" type="text"></div><div class="space-y-2"><label class="font-label-md text-on-surface">Email Address</label><input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="john@enterprise.com" required="" type="email"></div></div><div class="grid md:grid-cols-2 gap-6"><div class="space-y-2"><label class="font-label-md text-on-surface">Phone Number</label><input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="+1 (555) 000-0000" required="" type="tel"></div><div class="space-y-2"><label class="font-label-md text-on-surface">Portfolio / LinkedIn URL</label><input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="https://linkedin.com/in/johndoe" type="url"></div></div><div class="grid md:grid-cols-2 gap-6"><div class="space-y-2"><label class="font-label-md text-on-surface">Applying for Position</label><select class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all bg-white" id="job_role"><option>Select a role...</option><option>Senior PHP Developer</option><option>Cloud Architect</option><option>UI/UX Designer</option><option>Marketing Operations Manager</option></select></div><div class="space-y-2"><label class="font-label-md text-on-surface">Years of Experience</label><input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" min="0" placeholder="e.g. 5" required="" type="number"></div></div><div class="space-y-2"><label class="font-label-md text-on-surface">Resume / CV</label><div class="relative flex items-center justify-center w-full"><label class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container-low transition-colors"><div class="flex flex-col items-center justify-center pt-5 pb-6"><span class="material-symbols-outlined text-outline mb-2">cloud_upload</span><p class="text-sm text-outline-variant"><span class="font-semibold">Click to upload</span> or drag and drop</p><p class="text-xs text-outline-variant">PDF, DOCX (Max. 5MB)</p></div><input class="hidden" type="file"></label></div></div><div class="space-y-2"><label class="font-label-md text-on-surface">Cover Letter / Brief Bio</label><textarea class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all resize-none" placeholder="Tell us why you're a great fit for EnterpriseCore..." rows="4"></textarea></div><button class="w-full py-4 bg-primary text-on-primary font-label-md rounded-lg shadow-lg hover:bg-primary-container transition-all active:scale-[0.98]" type="submit">Submit Application</button><p class="text-center text-xs text-on-surface-variant">By clicking submit, you agree to our <a class="underline" href="#">Privacy Policy</a> regarding applicant data.</p></form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
+            <div class="md:col-span-2 space-y-6">
+                <h3 class="font-headline-md text-headline-md font-bold text-primary">EnterpriseCore</h3>
+                <p class="text-on-surface-variant max-w-xs">Global precision engineering for high-stakes digital environments. Delivering reliable, scalable solutions for the world's leading brands.</p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:text-primary transition-colors" href="#">
+                        <span class="material-symbols-outlined text-[20px]">hub</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:text-primary transition-colors" href="#">
+                        <span class="material-symbols-outlined text-[20px]">alternate_email</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:text-primary transition-colors" href="#">
+                        <span class="material-symbols-outlined text-[20px]">public</span>
+                    </a>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <h4 class="font-label-md font-bold uppercase tracking-widest text-on-surface">Services</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="services.html">Web Development</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="services.html">Cloud Engineering</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="services.html">AI Integration</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="services.html">Cybersecurity</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h4 class="font-label-md font-bold uppercase tracking-widest text-on-surface">Company</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="index.html">About Us</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="case-studies.html">Our Portfolio</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="careers.html">Careers</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="request-quote.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="space-y-6">
+                <h4 class="font-label-md font-bold uppercase tracking-widest text-on-surface">Newsletter</h4>
+                <p class="text-sm text-on-surface-variant">Stay updated with enterprise tech trends.</p>
+                <form class="flex flex-col gap-2" action="#" method="POST" onsubmit="event.preventDefault(); alert('Subscribed to newsletter.'); this.reset();">
+                    <input class="bg-surface border border-outline-variant rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Email Address" type="email" required/>
+                    <button class="bg-primary text-on-primary py-2 rounded-lg font-label-md">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-container-max mx-auto px-margin-desktop py-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-label-sm text-on-surface-variant">© 2024 EnterpriseCore. All rights reserved.</p>
+            <div class="flex gap-8">
+                <a class="text-label-sm text-on-surface-variant hover:text-primary" href="#">Privacy Policy</a>
+                <a class="text-label-sm text-on-surface-variant hover:text-primary" href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+<script>
+        // Micro-interactions for form submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerText = 'Application Sent!';
+                btn.classList.replace('bg-primary', 'bg-tertiary');
+                e.target.reset();
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.replace('bg-tertiary', 'bg-primary');
+                    btn.disabled = false;
+                }, 3000);
+            }, 1500);
+        });
+
+        // Simple scroll behavior for job roles
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body></html>

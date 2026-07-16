@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Case Studies | EnterpriseCore</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#004395",
+                    "background": "#f9f9ff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#0074a6",
+                    "primary-container": "#2563eb",
+                    "surface-container-highest": "#dce2f7",
+                    "on-surface": "#141b2b",
+                    "surface": "#f9f9ff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-container": "#e9edff",
+                    "on-primary-fixed": "#00174b",
+                    "primary": "#004ac6",
+                    "on-background": "#141b2b",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#2170e4",
+                    "secondary": "#0058be",
+                    "outline-variant": "#c3c6d7",
+                    "on-tertiary-fixed": "#001e2f",
+                    "on-secondary-container": "#fefcff",
+                    "surface-container-high": "#e1e8fd",
+                    "on-primary-container": "#eeefff",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#293040",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#89ceff",
+                    "tertiary-fixed": "#c9e6ff",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#005a82",
+                    "surface-dim": "#d3daef",
+                    "on-secondary-fixed": "#001a42",
+                    "primary-fixed": "#dbe1ff",
+                    "inverse-on-surface": "#edf0ff",
+                    "secondary-fixed": "#d8e2ff",
+                    "outline": "#737686",
+                    "on-surface-variant": "#434655",
+                    "surface-container-low": "#f1f3ff",
+                    "on-tertiary-fixed-variant": "#004c6e",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#dce2f7",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#0053db",
+                    "surface-bright": "#f9f9ff",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#e4f2ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-desktop": "48px",
+                    "container-max": "1280px",
+                    "section-padding": "96px",
+                    "margin-mobile": "16px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Poppins"],
+                    "headline-md": ["Poppins"],
+                    "body-lg": ["Poppins"],
+                    "label-sm": ["Poppins"],
+                    "headline-xl": ["Poppins"],
+                    "label-md": ["Poppins"],
+                    "display-lg": ["Poppins"],
+                    "body-md": ["Poppins"],
+                    "headline-lg": ["Poppins"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .case-study-card:hover .card-image {
+            transform: scale(1.05);
+        }
+        .filter-btn.active {
+            background-color: #004ac6;
+            color: #ffffff;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+    <!-- TopNavBar -->
+    <nav class="bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm fixed top-0 w-full z-50">
+        <div class="flex justify-between items-center h-[72px] px-margin-desktop max-w-container-max mx-auto w-full">
+            <div class="font-headline-md text-headline-md font-bold text-primary">
+                <a href="index.html">EnterpriseCore</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a>
+                <a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1" href="case-studies.html">Case Studies</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="industries.html">Industries</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="blog.html">Blog</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="careers.html">Careers</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">search</button>
+                <a href="request-quote.html" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md text-label-md font-bold hover:shadow-md active:opacity-80 active:scale-95 transition-all text-center">Request Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-[72px]">
+        <!-- Hero Section -->
+        <section class="relative py-section-padding bg-surface-container-lowest overflow-hidden">
+            <div class="max-w-container-max mx-auto px-margin-desktop relative z-10 text-center">
+                <span class="inline-block px-3 py-1 rounded bg-primary-container/10 text-primary font-label-sm text-label-sm uppercase tracking-wider mb-6">Success Stories</span>
+                <h1 class="font-display-lg text-display-lg text-primary mb-8 max-w-4xl mx-auto">Proven Results for Global Leaders.</h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                    Explore how EnterpriseCore’s precision engineering and strategic solutions have transformed operational efficiency across various industries.
+                </p>
+                <div class="flex justify-center gap-12">
+                    <div class="text-center">
+                        <div class="font-headline-xl text-headline-xl text-primary counter" data-target="350">0</div>
+                        <div class="font-label-md text-label-md text-on-surface-variant">Global Projects</div>
+                    </div>
+                    <div class="text-center border-x border-outline-variant/30 px-12">
+                        <div class="font-headline-xl text-headline-xl text-primary counter" data-target="98">0</div>
+                        <div class="font-label-md text-label-md text-on-surface-variant">Client Retention %</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="font-headline-xl text-headline-xl text-primary counter" data-target="42">0</div>
+                        <div class="font-label-md text-label-md text-on-surface-variant">Industry Awards</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery & Filters -->
+        <section class="py-section-padding bg-surface">
+            <div class="max-w-container-max mx-auto px-margin-desktop">
+                <!-- Filter Bar -->
+                <div class="flex flex-wrap justify-center gap-4 mb-16">
+                    <button class="filter-btn active px-8 py-3 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary hover:text-primary" data-filter="all">All Industries</button>
+                    <button class="filter-btn px-8 py-3 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary hover:text-primary" data-filter="Healthcare">Healthcare</button>
+                    <button class="filter-btn px-8 py-3 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary hover:text-primary" data-filter="Finance">Finance</button>
+                    <button class="filter-btn px-8 py-3 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary hover:text-primary" data-filter="Manufacturing">Manufacturing</button>
+                    <button class="filter-btn px-8 py-3 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary hover:text-primary" data-filter="Tech">Technology</button>
+                </div>
+                <!-- Case Study Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="case-study-grid">
+                    <!-- Card 1 -->
+                    <div class="case-study-card group bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="Healthcare">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="card-image w-full h-full object-cover transition-transform duration-500" data-alt="Healthcare integration case study" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_xirztAUtHCj2U2gV3--pAZwFRKO4UA7o6QOYUmh7jweupNnjYVcu1UuaQtuNyagd72Wjg_nH6EiiT3aQpHIW7_a5viPtGtEdRkELXm_k9QK8GTcflgD0-6HLLdc1hrPbsviu5cmkhqDYM2TKAplOaxvgKqH-VgNM_8KTlCb78aT_ib5Fzxs9zM7zBGZttopTQE9nwtpU2ORR-sZb89bZ_Aw_m1F9jJ_TNS_688heUxoA1DRqrDnhkg"/>
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-primary text-on-primary px-3 py-1 rounded text-label-sm font-label-sm">Healthcare</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">OmniHealth Integration</h3>
+                            <div class="font-headline-lg text-headline-lg text-on-surface mb-4">40% Faster Data Retrieval</div>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Streamlining electronic health records across 12 regional hospitals through cloud-native orchestration.</p>
+                            <a class="inline-flex items-center font-label-md text-label-md text-primary font-bold group-hover:translate-x-1 transition-transform" href="request-quote.html">
+                                View Case Study <span class="material-symbols-outlined ml-2">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="case-study-card group bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="Finance">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="card-image w-full h-full object-cover transition-transform duration-500" data-alt="Finance case study" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2-FZZ3ZS15YwjoLQEaoWWPNs7V-t9uVffYmxGNx8TbLGRcqzvNJ-0ZEkAE3xOku2_33tTV6UvRBofTcb6eKmueRI46nxdrYiJiWqH89JST5qbpm58AAHLoZ41R5svVbxHr7HlczMTu_a6On2GCkTfUdKJ1CzmwHkDiwHrSJcVi_ICWLTaxwxHEEXPGe2vYU32_bp0WRVthBKZjLycce35TniF8dMG4h0GbWDjwuB9bgJZJV-6vBh_WQ"/>
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-primary text-on-primary px-3 py-1 rounded text-label-sm font-label-sm">Finance</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">Global Capital Systems</h3>
+                            <div class="font-headline-lg text-headline-lg text-on-surface mb-4">99.99% Uptime Achieved</div>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Re-engineering legacy trading platforms for sub-millisecond execution and total system resilience.</p>
+                            <a class="inline-flex items-center font-label-md text-label-md text-primary font-bold group-hover:translate-x-1 transition-transform" href="request-quote.html">
+                                View Case Study <span class="material-symbols-outlined ml-2">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="case-study-card group bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="Manufacturing">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="card-image w-full h-full object-cover transition-transform duration-500" data-alt="Manufacturing case study" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD99BWUzUAuYeWrNaUwXdjgtB9QsN1fhnJwijjUww8XWqwO3A7JyGBEy9FlEm9J_uSmQNPu2q3p2BumH4cvrIDATxRmKWVWpDpVIuwCtAJmFiOUDn8jVjqHo8kwXRovCzqBYlk1iTctQeQAZCjuqae9p_LSDTK_t-CJxQFyF9Mm8QGH_05I1gM7iw9lihESD0T8O1FQDhUltx1GVCwzQcajshj4RupVgguOcVOJOv5Nf0mQAbptODUfuw"/>
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-primary text-on-primary px-3 py-1 rounded text-label-sm font-label-sm">Manufacturing</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">Precision Aero Parts</h3>
+                            <div class="font-headline-lg text-headline-lg text-on-surface mb-4">25% Reduction in Waste</div>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Implementing AI-driven predictive maintenance on the shop floor to optimize material throughput.</p>
+                            <a class="inline-flex items-center font-label-md text-label-md text-primary font-bold group-hover:translate-x-1 transition-transform" href="request-quote.html">
+                                View Case Study <span class="material-symbols-outlined ml-2">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="case-study-card group bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="Tech">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="card-image w-full h-full object-cover transition-transform duration-500" data-alt="Technology cloud scale case study" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgdKuv25r7Ng8g1TtXVmLO8GhqBxr8tUtOTbqHkGZpoYjnTd5_--SULfm-zTtL4jEZanSglfq0Prjf5kpMfgd8bukd8XowH6B5ZChW1YBMUrbGZmISYREsHS_VXVLAmAd4N_sd3w_WfKMVmUGbE-E8jg1C9UmkHuy1Q2zLMmoaOaNJ9UeHtBpGyTxM0W-ljIBWyGIukBE5rhs3kbpRKhYtUKzzviHXNQzF7_8Hbxm9DrC4PuYgJlqLKw"/>
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-primary text-on-primary px-3 py-1 rounded text-label-sm font-label-sm">Technology</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">CloudScale Solutions</h3>
+                            <div class="font-headline-lg text-headline-lg text-on-surface mb-4">3x Scalability Increase</div>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Migrating a monolithic SaaS provider to a global serverless architecture without downtime.</p>
+                            <a class="inline-flex items-center font-label-md text-label-md text-primary font-bold group-hover:translate-x-1 transition-transform" href="request-quote.html">
+                                View Case Study <span class="material-symbols-outlined ml-2">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="case-study-card group bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="Healthcare">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="card-image w-full h-full object-cover transition-transform duration-500" data-alt="Healthcare therapeutics case study" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHsWAVV5mjLnXxn_2NxrM3OC-HYm9fw-oIWbsgjUMGgKpQf1RVoxU9mH8nmZU8vc3IbnN6J6xGT7d02shCiXwNUMDEViOowOcjtd5B-sRV3A9B8dEx1OOco20OCkT1eCUpCzaD07jzNhSaudwbdlADIt72G4yfvve0cBL7XWsc1MEgMnQ7chf1x-33luYeQXyGAiiZccoZkPMb5SSbYBdLZW8F_qsIPqModz-xESDwyOLr45ZgaGJBZw"/>
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-primary text-on-primary px-3 py-1 rounded text-label-sm font-label-sm">Healthcare</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">BioGen Therapeutics</h3>
+                            <div class="font-headline-lg text-headline-lg text-on-surface mb-4">60% Faster Clinical Trials</div>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Leveraging advanced analytics to identify patient cohorts and accelerate life-saving research.</p>
+                            <a class="inline-flex items-center font-label-md text-label-md text-primary font-bold group-hover:translate-x-1 transition-transform" href="request-quote.html">
+                                View Case Study <span class="material-symbols-outlined ml-2">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="case-study-card group bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="Finance">
+                        <div class="relative h-64 overflow-hidden">
+                            <img class="card-image w-full h-full object-cover transition-transform duration-500" data-alt="Secure banking case study" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcJX5uTMV8d2CczKNMZEaw4UJ0Tgm3WwvrX_lXFlNZxfDoRxVH7sO6nTK4d3Clndu5UwiLZwtJWcayHNlAl3idL-9CqB3Qd9qmmQhbI5KmlS5EOQI9Bno6jcqBIQjgmiPOw2XtEv0sAjnDBq9y7GpxRE338B0Az_nnbyPyvhoRqoc0GMu7G3Cu1WBmp6SiHvSqkX6uFaVsVSWCW5ZB8QcSqRkFg_BnhRp95oyqzsTx-X9RVGKq0y1HbA"/>
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-primary text-on-primary px-3 py-1 rounded text-label-sm font-label-sm">Finance</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">SafeGuard Banking</h3>
+                            <div class="font-headline-lg text-headline-lg text-on-surface mb-4">Zero Security Breaches</div>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Implementing end-to-end zero-trust architecture for a major retail banking group's mobile division.</p>
+                            <a class="inline-flex items-center font-label-md text-label-md text-primary font-bold group-hover:translate-x-1 transition-transform" href="request-quote.html">
+                                View Case Study <span class="material-symbols-outlined ml-2">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter / CTA -->
+        <section class="py-section-padding bg-surface-container-high border-y border-outline-variant/20">
+            <div class="max-w-container-max mx-auto px-margin-desktop text-center">
+                <h2 class="font-headline-lg text-headline-lg text-primary mb-6">Drive Your Enterprise Forward</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl mx-auto">Subscribe to our newsletter for exclusive industry insights and engineering breakthroughs.</p>
+                <form class="flex flex-col md:flex-row gap-4 justify-center max-w-md mx-auto" onsubmit="event.preventDefault(); alert('Subscribed to newsletter.'); this.reset();">
+                    <input class="flex-1 bg-surface-container-lowest border border-outline-variant px-6 py-3 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none font-body-md text-body-md" placeholder="Work Email" type="email" required/>
+                    <button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-md text-label-md font-bold hover:shadow-lg active:scale-95 transition-all">Join Us</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest border-t border-outline-variant">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
+            <div class="md:col-span-2">
+                <div class="font-headline-md text-headline-md font-bold text-primary mb-6">EnterpriseCore</div>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6 max-w-sm">Precision engineering and strategic digital transformation for global enterprises. Building the backbone of modern industry since 2012.</p>
+            </div>
+            <div>
+                <h4 class="font-label-md text-label-md font-bold text-primary mb-6 uppercase">Company</h4>
+                <ul class="space-y-4">
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="services.html">Services</a></li>
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="industries.html">Industries</a></li>
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="case-studies.html">Case Studies</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-label-md text-label-md font-bold text-primary mb-6 uppercase">Legal</h4>
+                <ul class="space-y-4">
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">Privacy Policy</a></li>
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-label-md text-label-md font-bold text-primary mb-6 uppercase">Quick Links</h4>
+                <ul class="space-y-4">
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="careers.html">Careers</a></li>
+                    <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all inline-block" href="request-quote.html">Request Quote</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-container-max mx-auto px-margin-desktop py-8 border-t border-outline-variant/30">
+            <p class="font-label-sm text-label-sm text-on-surface-variant text-center opacity-70">© 2024 EnterpriseCore. All rights reserved. Precision Engineering &amp; Governance.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Filter logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.case-study-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                cards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.style.opacity = '1', 50);
+                    } else {
+                        card.style.opacity = '0';
+                        setTimeout(() => card.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = +entry.target.getAttribute('data-target');
+                    let count = 0;
+                    const speed = 2000 / target;
+
+                    const updateCount = () => {
+                        if (count < target) {
+                            count++;
+                            entry.target.innerText = count + (target === 98 ? '%' : '+');
+                            setTimeout(updateCount, speed);
+                        } else {
+                            entry.target.innerText = target + (target === 98 ? '%' : '+');
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        counters.forEach(counter => observer.observe(counter));
+    </script>
+</body>
+</html>
+

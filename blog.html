@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EnterpriseCore | Insights &amp; Engineering Blog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#004395",
+                    "background": "#f9f9ff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#0074a6",
+                    "primary-container": "#2563eb",
+                    "surface-container-highest": "#dce2f7",
+                    "on-surface": "#141b2b",
+                    "surface": "#f9f9ff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-container": "#e9edff",
+                    "on-primary-fixed": "#00174b",
+                    "primary": "#004ac6",
+                    "on-background": "#141b2b",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#2170e4",
+                    "secondary": "#0058be",
+                    "outline-variant": "#c3c6d7",
+                    "on-tertiary-fixed": "#001e2f",
+                    "on-secondary-container": "#fefcff",
+                    "surface-container-high": "#e1e8fd",
+                    "on-primary-container": "#eeefff",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#293040",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#89ceff",
+                    "tertiary-fixed": "#c9e6ff",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#005a82",
+                    "surface-dim": "#d3daef",
+                    "on-secondary-fixed": "#001a42",
+                    "primary-fixed": "#dbe1ff",
+                    "inverse-on-surface": "#edf0ff",
+                    "secondary-fixed": "#d8e2ff",
+                    "outline": "#737686",
+                    "on-surface-variant": "#434655",
+                    "surface-container-low": "#f1f3ff",
+                    "on-tertiary-fixed-variant": "#004c6e",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#dce2f7",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#0053db",
+                    "surface-bright": "#f9f9ff",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#e4f2ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-desktop": "48px",
+                    "container-max": "1280px",
+                    "section-padding": "96px",
+                    "margin-mobile": "16px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Poppins"],
+                    "headline-md": ["Poppins"],
+                    "body-lg": ["Poppins"],
+                    "label-sm": ["Poppins"],
+                    "headline-xl": ["Poppins"],
+                    "label-md": ["Poppins"],
+                    "display-lg": ["Poppins"],
+                    "body-md": ["Poppins"],
+                    "headline-lg": ["Poppins"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Poppins', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm">
+        <div class="flex justify-between items-center h-[72px] px-margin-desktop max-w-container-max mx-auto w-full">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="font-headline-md text-headline-md font-bold text-primary">EnterpriseCore</a>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="case-studies.html">Case Studies</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="industries.html">Industries</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="blog.html">Blog</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="careers.html">Careers</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="material-symbols-outlined text-on-surface-variant hover:text-primary">search</button>
+                <a href="request-quote.html" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md text-label-md hover:shadow-lg transition-all active:scale-95 text-center">Request Quote</a>
+            </div>
+        </div>
+    </nav>
+<main>
+<!-- Featured Post Hero Section -->
+<section class="relative pt-section-padding pb-16 px-margin-desktop max-w-container-max mx-auto">
+<div class="relative overflow-hidden rounded-xl h-[500px] shadow-xl group">
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/40 to-transparent z-10"></div>
+<div class="absolute inset-0 scale-105 group-hover:scale-100 transition-transform duration-700 bg-cover bg-center" data-alt="A professional architectural photograph of a futuristic corporate data center with glowing blue server racks and sleek metallic surfaces. The lighting is crisp and cold, emphasizing high-tech precision. Minimalist white geometric overlays hint at digital connectivity in a clean, enterprise-grade environment. Deep shadows provide high contrast, while the overall mood is authoritative and innovative." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCiqEWi5SB47XAxqpcn-UFIgpffvUCxuX7jukSrxAd-25YZhhf-tx7XqW2XPbS8uZ9MZibpOmKTqBTBTuPs7B1vxU4XF-d0HNerAvxCGDGDN_xsFRVoiCNKCA3cXUFp9GEJN1GaWONe2cc_akvKRVNvhac4Av1jqAC1wYFEzeVzLZmzJANu8cKF2PbLpq_-kjiamJ0AiONTKNgrywVvi0mzvnzQZzKZ5z8jQ5Jz73hXdME6Rd-Ib2VAuw')">
+</div>
+<div class="absolute bottom-0 left-0 p-12 z-20 max-w-3xl">
+<span class="inline-block px-3 py-1 bg-primary text-on-primary font-label-sm rounded-lg mb-6 tracking-wider">FEATURED INSIGHT</span>
+<h1 class="font-headline-xl text-headline-xl text-white mb-6 leading-tight">Navigating the Future of Sovereign Cloud Infrastructures</h1>
+<p class="font-body-lg text-body-lg text-surface-variant/90 mb-8">How global enterprises are redefining data residency and operational resilience in an increasingly fragmented digital landscape.</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full border-2 border-white/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional corporate headshot of a senior executive male in his late 40s. He is wearing a tailored navy suit and a white shirt, looking directly at the camera with a confident, friendly expression. The background is a soft-focus modern office with neutral grey and blue tones, matching a clean professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_DCKoLV08-JNLy0SP2y7Ifkze8xZq0M2QhtR-hF5BI_1l8nEWLOpw_mZJe3V7hpVKHss-AVIAQn_hZiHNOYlT38VRzvcuBK3znFEmxo5tNInmHIIoS-E9uru2rYw7icMrO-4FiQ-c02CW-rhYJmyq9cZvdwEHSKgHQMNjDFSM120EceSEKyuxPEbXqxx9LQBVyysLId-uAaC5nsj5SGxu3yeHmULwkW0fllz3OMhZowWUd3zWNLWP7w"/>
+</div>
+<div>
+<p class="text-white font-label-md">Marcus Thorne</p>
+<p class="text-surface-variant/70 font-label-sm">Chief Technology Officer • 8 min read</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Filter Bar -->
+<section class="sticky top-[72px] z-40 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 py-4 mb-12">
+<div class="max-w-container-max mx-auto px-margin-desktop flex flex-wrap items-center justify-between gap-4">
+<div class="flex gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
+<button class="px-6 py-2 bg-primary text-on-primary rounded-full font-label-md transition-all">All Posts</button>
+<button class="px-6 py-2 bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest rounded-full font-label-md transition-all">Engineering</button>
+<button class="px-6 py-2 bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest rounded-full font-label-md transition-all">AI &amp; Data</button>
+<button class="px-6 py-2 bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest rounded-full font-label-md transition-all">Security</button>
+<button class="px-6 py-2 bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest rounded-full font-label-md transition-all">Company News</button>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="font-label-md">Sort by:</span>
+<select class="bg-transparent border-none font-label-md text-primary focus:ring-0 cursor-pointer">
+<option>Latest First</option>
+<option>Oldest First</option>
+<option>Most Read</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Blog Grid -->
+<section class="max-w-container-max mx-auto px-margin-desktop pb-section-padding">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-tech digital visualization of artificial intelligence neural networks glowing in vibrant electric blue and white. The composition is sleek and modern, with abstract data streams flowing through a dark, minimalist space. The aesthetic is clean and corporate, suggesting advanced machine learning and data processing power in a professional tech environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxe-k7NsX8DezvQEJhQyFbI-hfb03nznjLFZKkhSCluNPdnqopf-TI0Nv8C2gjIG0B111LRRTcrCmWuVH4U041gorAoIIIWjTqQ7Ih2r1waUpXm-FABW5-sZi6sf_2_xOw6383qlUuMYX2fRZbz73zE-gU8YPk09Jwz_Ng6kYscODaFPqETiwAF6Vq8PoMT62OOnhNfbKZBEur3oroMmSMtKMLdXeCRJTihoq1PWy76vVU-67QZ5xg3A"/>
+<span class="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur text-primary font-label-sm rounded shadow-sm">AI &amp; DATA</span>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">Deploying LLMs at Enterprise Scale: A Handbook</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">Explore the operational challenges and security frameworks required to move generative AI from experimental pilots to production-ready enterprise solutions.</p>
+<div class="mt-auto flex items-center justify-between pt-6 border-t border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-primary">person</span>
+</div>
+<span class="font-label-md text-on-surface-variant">Sarah Chen</span>
+</div>
+<span class="font-label-sm text-outline">Oct 14, 2024</span>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist laboratory setting showcasing advanced microchips and semiconductors under a soft, diffused light. The color palette is composed of cool greys, whites, and subtle metallic blues. The focus is sharp on the intricate gold circuits of a processor, symbolizing precision engineering and industrial innovation. The mood is clean, clinical, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDso0gW9Wk6DKS4ejI7nA5AywLFVxDSFZ2aP_jR8__W48hO5ZEb1c_mxxOlzm1anJ_aGuZASk3yoClHCzIDrbniaK_YrN8MGM-OlngVGA23NTU7X7nBV_43bGd1DF9XIcTDEBEPGV5SEEKSxNOUzD6alUzHQqWhlwG7xRbUnQVpZItNELaTzbEdUCssPttB8WO30U5IeoiIOIu9tkjDxSWrZKLh3SVTwEh22DhnpfeQ4BGbGhwHfoiXKA"/>
+<span class="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur text-primary font-label-sm rounded shadow-sm">ENGINEERING</span>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">Optimizing Latency in High-Frequency Systems</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">A deep dive into kernel-level optimizations and hardware acceleration strategies for mission-critical trading and logistics platforms.</p>
+<div class="mt-auto flex items-center justify-between pt-6 border-t border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-primary">person</span>
+</div>
+<span class="font-label-md text-on-surface-variant">David Miller</span>
+</div>
+<span class="font-label-sm text-outline">Oct 12, 2024</span>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern, high-rise boardroom overlooking a bright cityscape at dusk. The interior features polished glass, dark wood, and minimalist furniture. Soft ambient lighting highlights the professional atmosphere. The image represents leadership, corporate strategy, and global business connectivity, maintaining a high-key, clean aesthetic with deep blue and warm neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjdLzd9q9nwngvbShnPt-V8gXtXq7N2Lk06aJCd9H_iHCeLOGRCY-JwOV-t1mkapZ72XpaoxcISdvBSG0hLN1pDVNEwrCj8llZfdZofVedxcUVGj1TuMeVQpyxNF5PqyvwPicBKvNXxdbteKiNCsZ4OKz38_XNvqrLcSuPlwFHjEAOtzOGlCjDAzXgKFCscU21LS22QtM9dUf5AsqAZD2LMqQWpneXRaqMCo6qS5y29l0F-psnFUaIdg"/>
+<span class="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur text-primary font-label-sm rounded shadow-sm">SECURITY</span>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">Zero Trust: Moving Beyond the Perimeter</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">Why traditional VPNs are failing modern remote workforces and how identity-centric security models provide a superior defense-in-depth.</p>
+<div class="mt-auto flex items-center justify-between pt-6 border-t border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-primary">person</span>
+</div>
+<span class="font-label-md text-on-surface-variant">Elena Rossi</span>
+</div>
+<span class="font-label-sm text-outline">Oct 09, 2024</span>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An abstract 3D render of interconnected geometric nodes and lines, representing a global supply chain or network. The style is ultra-modern and clean, using a palette of white, silver, and vibrant cobalt blue. Soft shadows and bokeh effects create depth, while the overall feeling is one of efficiency, connectivity, and complex systems made simple." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdNTVfg3VxXdds9UYlYxR6Pbzer1RhjhCXprBzDpm96y8oPGjeO2EkfSbiV385QiRzjMwa0TqrC2_S2qZG76IGvqa8Og6-h-ModQ43qDtAL2FJD6ZqAq5r2o6g3RTE3XNJWjPaEcJyZERRx9DQlXp2pAu3P8t6I9bK72U0pt8t5T2VogrPHnuSBR9PQWdHbN55nivkoOzw9QT7Ap7MdKql_Zp89tptlCVK9SUDEA8lZaZM1O1fRtLWjg"/>
+<span class="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur text-primary font-label-sm rounded shadow-sm">SOLUTIONS</span>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">Sustainable Digital Transformation for 2025</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">Balancing aggressive digital growth with ESG commitments through green coding practices and renewable-powered data infrastructure.</p>
+<div class="mt-auto flex items-center justify-between pt-6 border-t border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-primary">person</span>
+</div>
+<span class="font-label-md text-on-surface-variant">James Wilson</span>
+</div>
+<span class="font-label-sm text-outline">Oct 05, 2024</span>
+</div>
+</div>
+</article>
+<!-- Card 5 (Bento Wide Variant) -->
+<article class="md:col-span-2 bg-primary text-on-primary rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row group">
+<div class="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" data-alt="A cinematic, low-angle shot of a group of diverse professionals working together in a high-tech innovation hub. Large windows reveal a blurry metropolitan skyline. The scene is lit with cool blue light and warm interior accents, creating a dynamic, collaborative mood. The aesthetic is extremely clean and high-end, representing a modern corporate culture of excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCauGMEEmYnijTtSxhMsogpBkX8EDvy4-dDMTnooRxCCn0PeV5jcTBjT3jv2HEmF6__hfv2qxVQqksyE2YZ-13eHtMy2fjjQ-Me2fMVdEAC_KT39MBjsM6LGQVLAs0Jlrr5gzRtx2wHasyvc1v73jzK2fCOP0atiDoFSLQ99NWWbSYoe_zUcBYZAeYdLPxNpZ2MAEukpNyEHOVitcZpjke6OySx60LcRlLE8vIROkoq1vdinPgaOpaWQ"/>
+</div>
+<div class="md:w-1/2 p-10 flex flex-col justify-center">
+<span class="inline-block px-3 py-1 bg-white/20 text-white font-label-sm rounded-lg mb-6 w-fit">COMPANY</span>
+<h3 class="font-headline-lg text-headline-lg mb-4 text-white">Join Our Engineering Team in Zurich</h3>
+<p class="font-body-md text-body-md text-white/80 mb-8">We are expanding our core infrastructure teams. Explore how you can help build the next generation of enterprise middleware and cloud-native solutions.</p>
+<a class="flex items-center gap-2 font-label-md text-white hover:translate-x-2 transition-transform" href="#">
+                            View Open Positions <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, flat-lay arrangement of high-quality tech devices: a sleek laptop, a smartphone showing a complex analytics dashboard, and a digital stylus. The background is a white marble surface, giving a premium, professional feel. Lighting is soft and bright, highlighting a minimalist, organized workflow. The colors are dominated by grey, silver, and primary blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7lPQAFzH399wZRI2RFXVKadKcwRDJTWmnDvvp7H_FPj4FV_QJZAYPaNNxe9X8K0KY6kcK2K7cnlT6fVjXsvp8nOCJb5Z8vB9tgfzgF7Q9gAwXrFWsnxiCAjqSwVDPh-rfLhjI-DqEhDvWb7A-9Sd2p6ktNtg6pQgtiMFHAOV9mvQeGoItNOIy_fvJLsaNcbZ4qWXwy96elAEQibuxxAM0Y3GIFQr9VjFLBhorB3ElbvzpZnVZtvJCfQ"/>
+<span class="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur text-primary font-label-sm rounded shadow-sm">AI &amp; DATA</span>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">The Ethics of Automated Decision Making</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">Addressing bias and transparency in algorithmic governance frameworks for financial and legal institutions.</p>
+<div class="mt-auto flex items-center justify-between pt-6 border-t border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-primary">person</span>
+</div>
+<span class="font-label-md text-on-surface-variant">Dr. Linda Gao</span>
+</div>
+<span class="font-label-sm text-outline">Sep 28, 2024</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center mt-16 gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant text-on-surface-variant hover:bg-primary hover:text-white transition-colors">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant bg-primary text-white">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant text-on-surface-variant hover:bg-primary hover:text-white transition-colors">3</button>
+<span class="px-2 self-center">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant text-on-surface-variant hover:bg-primary hover:text-white transition-colors">12</button>
+<button class="px-4 h-10 flex items-center justify-center rounded border border-outline-variant text-on-surface-variant hover:bg-primary hover:text-white transition-colors font-label-md">Next</button>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="bg-surface-container-low py-section-padding px-margin-desktop">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Stay Ahead of the Curve</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Get the latest insights on enterprise engineering and AI delivered directly to your inbox every fortnight.</p>
+<form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+<input class="flex-grow px-6 py-4 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary transition-all bg-white" placeholder="Enter your corporate email" type="email"/>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md hover:bg-primary/90 transition-all shadow-md active:scale-95" type="submit">Subscribe</button>
+</form>
+<p class="mt-4 font-label-sm text-outline">By subscribing, you agree to our Privacy Policy and terms of service.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
+            <div class="md:col-span-2 space-y-6">
+                <h3 class="font-headline-md text-headline-md font-bold text-primary">EnterpriseCore</h3>
+                <p class="text-on-surface-variant max-w-xs">Global precision engineering for high-stakes digital environments. Delivering reliable, scalable solutions for the world's leading brands.</p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:text-primary transition-colors" href="#">
+                        <span class="material-symbols-outlined text-[20px]">hub</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:text-primary transition-colors" href="#">
+                        <span class="material-symbols-outlined text-[20px]">alternate_email</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:text-primary transition-colors" href="#">
+                        <span class="material-symbols-outlined text-[20px]">public</span>
+                    </a>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <h4 class="font-label-md font-bold uppercase tracking-widest text-on-surface">Services</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="services.html">Web Development</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="services.html">Cloud Engineering</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="services.html">AI Integration</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="services.html">Cybersecurity</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h4 class="font-label-md font-bold uppercase tracking-widest text-on-surface">Company</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="index.html">About Us</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="case-studies.html">Our Portfolio</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="careers.html">Careers</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="request-quote.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="space-y-6">
+                <h4 class="font-label-md font-bold uppercase tracking-widest text-on-surface">Newsletter</h4>
+                <p class="text-sm text-on-surface-variant">Stay updated with enterprise tech trends.</p>
+                <form class="flex flex-col gap-2" action="#" method="POST" onsubmit="event.preventDefault(); alert('Subscribed to newsletter.'); this.reset();">
+                    <input class="bg-surface border border-outline-variant rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Email Address" type="email" required/>
+                    <button class="bg-primary text-on-primary py-2 rounded-lg font-label-md">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-container-max mx-auto px-margin-desktop py-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-label-sm text-on-surface-variant">© 2024 EnterpriseCore. All rights reserved.</p>
+            <div class="flex gap-8">
+                <a class="text-label-sm text-on-surface-variant hover:text-primary" href="#">Privacy Policy</a>
+                <a class="text-label-sm text-on-surface-variant hover:text-primary" href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+<script>
+        // Simple filter interaction simulation
+        const buttons = document.querySelectorAll('.scrollbar-hide button');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-on-primary');
+                    b.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+                });
+                btn.classList.add('bg-primary', 'text-on-primary');
+                btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+            });
+        });
+
+        // Hover effect for cards shadow
+        const cards = document.querySelectorAll('article');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('translate-y-[-4px]');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('translate-y-[-4px]');
+            });
+        });
+    </script>
+</body></html>

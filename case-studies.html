@@ -317,7 +317,7 @@
                     <button class="filter-btn px-8 py-3 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary hover:text-primary" data-filter="Tech">Technology</button>
                 </div>
                 <!-- Case Study Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="case-study-grid">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter" id="case-study-grid">
                     <!-- Card 1 -->
                     <div class="case-study-card group bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="Healthcare">
                         <div class="relative h-64 overflow-hidden">

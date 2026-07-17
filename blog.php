@@ -107,7 +107,7 @@ if (!empty($all_blogs)) {
 }
 ?>
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
+<html class="scroll-smooth overflow-x-hidden" lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -226,7 +226,143 @@ if (!empty($all_blogs)) {
             backdrop-filter: blur(10px);
             border: 1px solid rgba(229, 231, 235, 0.5);
         }
-    </style>
+    
+      
+      /* ========================================================
+         SENIOR FRONTEND RESPONSIVE AUDIT & FIX RULES (Tailwind-compatible)
+         ======================================================== */
+      
+      /* Global overflow reset to ensure absolute no horizontal scrolling */
+      html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        scroll-behavior: smooth;
+      }
+      
+      /* Typography Scaling: Small Phones (<360px) | Mobile (360px+) | Tablet (768px+) | Desktop (1280px+) */
+      h1, .text-display-lg, .text-3xl {
+        font-size: 24px !important;
+        line-height: 1.25 !important;
+      }
+      @media (min-width: 360px) {
+        h1, .text-display-lg, .text-3xl {
+          font-size: 34px !important;
+          line-height: 1.2 !important;
+        }
+      }
+      @media (min-width: 768px) {
+        h1, .text-display-lg, .text-3xl {
+          font-size: 48px !important;
+          line-height: 1.15 !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        h1, .text-display-lg, .text-3xl {
+          font-size: 64px !important;
+          line-height: 1.1 !important;
+        }
+      }
+
+      h2, .text-headline-xl {
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+      }
+      @media (min-width: 360px) {
+        h2, .text-headline-xl {
+          font-size: 30px !important;
+          line-height: 1.25 !important;
+        }
+      }
+      @media (min-width: 768px) {
+        h2, .text-headline-xl {
+          font-size: 42px !important;
+          line-height: 1.2 !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        h2, .text-headline-xl {
+          font-size: 48px !important;
+          line-height: 1.2 !important;
+        }
+      }
+
+      h3, .text-headline-lg {
+        font-size: 20px !important;
+        line-height: 1.35 !important;
+      }
+      @media (min-width: 360px) {
+        h3, .text-headline-lg {
+          font-size: 26px !important;
+          line-height: 1.3 !important;
+        }
+      }
+      @media (min-width: 768px) {
+        h3, .text-headline-lg {
+          font-size: 32px !important;
+          line-height: 1.3 !important;
+        }
+      }
+
+      /* Responsive Section Padding */
+      .py-section-padding {
+        padding-top: 40px !important; /* py-10 */
+        padding-bottom: 40px !important;
+      }
+      @media (min-width: 768px) {
+        .py-section-padding {
+          padding-top: 64px !important; /* py-16 */
+          padding-bottom: 64px !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        .py-section-padding {
+          padding-top: 96px !important; /* py-24 */
+          padding-bottom: 96px !important;
+        }
+      }
+
+      /* Responsive Container Padding (px-5 on mobile, px-10 on tablet, px-20 on desktop) */
+      .px-margin-mobile {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      @media (min-width: 768px) {
+        .px-margin-mobile {
+          padding-left: 40px !important;
+          padding-right: 40px !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        .px-margin-mobile {
+          padding-left: 80px !important;
+          padding-right: 80px !important;
+        }
+      }
+
+      /* Image Responsiveness & Constraint Reset */
+      img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+      
+      /* Ensure no text overlaps or clipping inside elements */
+      p, span, a, button, input, select, textarea {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+      
+      /* Button min-height requirement & full width on mobile when inside flexible layouts */
+      a.bg-primary, button.bg-primary, .btn, input[type="submit"] {
+        min-height: 48px !important;
+      }
+      
+      /* Bento grid item height compatibility & flex layout overrides */
+      .card-hover {
+        height: auto !important;
+      }
+</style>
 </head>
 <body class="bg-surface text-on-surface">
     
@@ -257,13 +393,13 @@ if (!empty($all_blogs)) {
 <main class="pt-[72px]">
         <!-- Featured Post Hero Section -->
         <?php if ($featured_post): ?>
-            <section class="relative pt-section-padding pb-16 px-margin-desktop max-w-container-max mx-auto">
+            <section class="relative pt-section-padding pb-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
                 <div class="relative overflow-hidden rounded-xl h-[500px] shadow-xl group">
                     <div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/40 to-transparent z-10"></div>
                     <div class="absolute inset-0 scale-105 group-hover:scale-100 transition-transform duration-700 bg-cover bg-center" data-alt="Featured Server Room" style="background-image: url('<?php echo htmlspecialchars($featured_post['featured_image']); ?>')"></div>
                     <div class="absolute bottom-0 left-0 p-12 z-20 max-w-3xl">
                         <span class="inline-block px-3 py-1 bg-primary text-on-primary font-label-sm rounded-lg mb-6 tracking-wider">FEATURED INSIGHT</span>
-                        <h1 class="font-headline-xl text-headline-xl text-white mb-6 leading-tight"><?php echo htmlspecialchars($featured_post['title']); ?></h1>
+                        <h1 class="font-headline-xl text-headline-md md:text-headline-xl text-white mb-6 leading-tight"><?php echo htmlspecialchars($featured_post['title']); ?></h1>
                         <p class="font-body-lg text-body-lg text-surface-variant/90 mb-8"><?php echo htmlspecialchars($featured_post['content']); ?></p>
                         <div class="flex items-center gap-4">
                             <div class="w-12 h-12 rounded-full border-2 border-white/20 overflow-hidden flex items-center justify-center bg-gray-600">
@@ -281,7 +417,7 @@ if (!empty($all_blogs)) {
 
         <!-- Category Filter Bar -->
         <section class="sticky top-[72px] z-40 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 py-4 mb-12">
-            <div class="max-w-container-max mx-auto px-margin-desktop flex flex-wrap items-center justify-between gap-4">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-wrap items-center justify-between gap-4">
                 <div class="flex gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
                     <a href="blog.php?category=all&search=<?php echo urlencode($search); ?>&sort=<?php echo $sort; ?>" class="px-6 py-2 <?php echo $category === 'all' ? 'bg-primary text-on-primary' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'; ?> rounded-full font-label-md transition-all inline-block text-center">All Posts</a>
                     <a href="blog.php?category=ENGINEERING&search=<?php echo urlencode($search); ?>&sort=<?php echo $sort; ?>" class="px-6 py-2 <?php echo $category === 'ENGINEERING' ? 'bg-primary text-on-primary' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'; ?> rounded-full font-label-md transition-all inline-block text-center">Engineering</a>
@@ -300,7 +436,7 @@ if (!empty($all_blogs)) {
         </section>
 
         <!-- Blog Grid -->
-        <section class="max-w-container-max mx-auto px-margin-desktop pb-section-padding">
+        <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-section-padding">
             <?php if (empty($all_blogs)): ?>
                 <div class="text-center py-20 bg-surface-container-lowest rounded-2xl border border-outline-variant/30">
                     <span class="material-symbols-outlined text-6xl text-outline mb-4">search_off</span>
@@ -335,7 +471,7 @@ if (!empty($all_blogs)) {
         </section>
 
         <!-- Newsletter Section -->
-        <section class="bg-surface-container-low py-section-padding px-margin-desktop">
+        <section class="bg-surface-container-low py-section-padding px-margin-mobile md:px-margin-desktop">
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Stay Ahead of the Curve</h2>
                 <p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Get the latest insights on enterprise engineering and AI delivered directly to your inbox every fortnight.</p>
@@ -350,7 +486,7 @@ if (!empty($all_blogs)) {
 
     <!-- Footer -->
     <footer class="bg-surface-container-lowest dark:bg-on-surface border-t border-outline-variant">
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
             <div class="md:col-span-2">
                 <a class="font-headline-md text-headline-md font-bold text-primary mb-6 inline-block" href="index.php">EnterpriseCore</a>
                 <p class="font-body-md text-body-md text-on-surface-variant max-w-xs mb-8">
@@ -380,7 +516,7 @@ if (!empty($all_blogs)) {
                 </ul>
             </div>
         </div>
-        <div class="border-t border-outline-variant/30 py-8 px-margin-desktop text-center">
+        <div class="border-t border-outline-variant/30 py-8 px-margin-mobile md:px-margin-desktop text-center">
             <p class="font-label-sm text-label-sm text-outline">© 2024 EnterpriseCore. All rights reserved.</p>
         </div>
     </footer>

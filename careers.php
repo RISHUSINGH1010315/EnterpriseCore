@@ -53,7 +53,7 @@ try {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -161,7 +161,143 @@ try {
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
-    </style>
+    
+      
+      /* ========================================================
+         SENIOR FRONTEND RESPONSIVE AUDIT & FIX RULES (Tailwind-compatible)
+         ======================================================== */
+      
+      /* Global overflow reset to ensure absolute no horizontal scrolling */
+      html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        scroll-behavior: smooth;
+      }
+      
+      /* Typography Scaling: Small Phones (<360px) | Mobile (360px+) | Tablet (768px+) | Desktop (1280px+) */
+      h1, .text-display-lg, .text-3xl {
+        font-size: 24px !important;
+        line-height: 1.25 !important;
+      }
+      @media (min-width: 360px) {
+        h1, .text-display-lg, .text-3xl {
+          font-size: 34px !important;
+          line-height: 1.2 !important;
+        }
+      }
+      @media (min-width: 768px) {
+        h1, .text-display-lg, .text-3xl {
+          font-size: 48px !important;
+          line-height: 1.15 !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        h1, .text-display-lg, .text-3xl {
+          font-size: 64px !important;
+          line-height: 1.1 !important;
+        }
+      }
+
+      h2, .text-headline-xl {
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+      }
+      @media (min-width: 360px) {
+        h2, .text-headline-xl {
+          font-size: 30px !important;
+          line-height: 1.25 !important;
+        }
+      }
+      @media (min-width: 768px) {
+        h2, .text-headline-xl {
+          font-size: 42px !important;
+          line-height: 1.2 !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        h2, .text-headline-xl {
+          font-size: 48px !important;
+          line-height: 1.2 !important;
+        }
+      }
+
+      h3, .text-headline-lg {
+        font-size: 20px !important;
+        line-height: 1.35 !important;
+      }
+      @media (min-width: 360px) {
+        h3, .text-headline-lg {
+          font-size: 26px !important;
+          line-height: 1.3 !important;
+        }
+      }
+      @media (min-width: 768px) {
+        h3, .text-headline-lg {
+          font-size: 32px !important;
+          line-height: 1.3 !important;
+        }
+      }
+
+      /* Responsive Section Padding */
+      .py-section-padding {
+        padding-top: 40px !important; /* py-10 */
+        padding-bottom: 40px !important;
+      }
+      @media (min-width: 768px) {
+        .py-section-padding {
+          padding-top: 64px !important; /* py-16 */
+          padding-bottom: 64px !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        .py-section-padding {
+          padding-top: 96px !important; /* py-24 */
+          padding-bottom: 96px !important;
+        }
+      }
+
+      /* Responsive Container Padding (px-5 on mobile, px-10 on tablet, px-20 on desktop) */
+      .px-margin-mobile {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      @media (min-width: 768px) {
+        .px-margin-mobile {
+          padding-left: 40px !important;
+          padding-right: 40px !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        .px-margin-mobile {
+          padding-left: 80px !important;
+          padding-right: 80px !important;
+        }
+      }
+
+      /* Image Responsiveness & Constraint Reset */
+      img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+      
+      /* Ensure no text overlaps or clipping inside elements */
+      p, span, a, button, input, select, textarea {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+      
+      /* Button min-height requirement & full width on mobile when inside flexible layouts */
+      a.bg-primary, button.bg-primary, .btn, input[type="submit"] {
+        min-height: 48px !important;
+      }
+      
+      /* Bento grid item height compatibility & flex layout overrides */
+      .card-hover {
+        height: auto !important;
+      }
+</style>
 </head>
 <body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
     
@@ -193,10 +329,10 @@ try {
         <!-- Hero Section -->
         <section class="relative min-h-[60vh] flex items-center overflow-hidden bg-surface py-section-padding">
             <div class="absolute inset-0 z-0"></div>
-            <div class="relative z-10 max-w-container-max mx-auto px-margin-desktop w-full grid md:grid-cols-2 gap-gutter items-center">
+            <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full grid md:grid-cols-2 gap-gutter items-center">
                 <div class="space-y-6">
                     <span class="inline-block px-3 py-1 bg-primary/10 text-primary font-label-sm rounded-full tracking-wider">CAREERS AT ENTERPRISECORE</span>
-                    <h1 class="font-display-lg text-display-lg leading-tight text-on-surface">
+                    <h1 class="font-display-lg text-3xl md:text-display-lg leading-tight text-on-surface">
                         Build the Future <br><span class="text-primary">with Us</span>.
                     </h1>
                     <p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
@@ -232,9 +368,9 @@ try {
 
         <!-- Values Section -->
         <section class="py-section-padding bg-surface-container-lowest" id="values">
-            <div class="max-w-container-max mx-auto px-margin-desktop">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
                 <div class="text-center mb-16 space-y-4">
-                    <h2 class="font-headline-xl text-headline-xl text-on-surface">Why Work Here?</h2>
+                    <h2 class="font-headline-xl text-headline-md md:text-headline-xl text-on-surface">Why Work Here?</h2>
                     <p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
                         We provide an environment where your skills are sharpened and your contributions define the next generation of enterprise core technologies.
                     </p>
@@ -276,10 +412,10 @@ try {
 
         <!-- Job Listings -->
         <section class="py-section-padding bg-surface" id="jobs">
-            <div class="max-w-container-max mx-auto px-margin-desktop">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
                 <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                     <div class="space-y-2">
-                        <h2 class="font-headline-xl text-headline-xl text-on-surface">Open Positions</h2>
+                        <h2 class="font-headline-xl text-headline-md md:text-headline-xl text-on-surface">Open Positions</h2>
                         <p class="text-on-surface-variant font-body-md">Find your next challenge in our diverse teams.</p>
                     </div>
                     <form action="careers.php#jobs" method="GET" class="flex gap-4">
@@ -327,10 +463,10 @@ try {
 
         <!-- Application Form -->
         <section class="py-section-padding bg-surface-container-low" id="apply">
-            <div class="max-w-container-max mx-auto px-margin-desktop">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
                 <div class="grid lg:grid-cols-2 gap-section-padding items-start">
                     <div class="space-y-8">
-                        <h2 class="font-headline-xl text-headline-xl text-on-surface">Ready to start?</h2>
+                        <h2 class="font-headline-xl text-headline-md md:text-headline-xl text-on-surface">Ready to start?</h2>
                         <p class="text-body-lg font-body-lg text-on-surface-variant">
                             Fill out the form to the right and our talent acquisition team will review your application within 48 hours. We're looking for passionate individuals who value precision and engineering excellence.
                         </p>
@@ -424,7 +560,7 @@ try {
 
     <!-- Footer -->
     <footer class="bg-surface-container-lowest dark:bg-on-surface border-t border-outline-variant">
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
             <div class="md:col-span-2 space-y-6">
                 <div class="font-headline-md text-headline-md font-bold text-primary">EnterpriseCore</div>
                 <p class="text-on-surface-variant font-body-md max-w-xs">
@@ -453,7 +589,7 @@ try {
                 </div>
             </div>
         </div>
-        <div class="border-t border-outline-variant/30 py-8 px-margin-desktop max-w-container-max mx-auto flex flex-col md:row justify-between items-center gap-4 text-on-surface-variant text-sm">
+        <div class="border-t border-outline-variant/30 py-8 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:row justify-between items-center gap-4 text-on-surface-variant text-sm">
             <div class="">© 2024 EnterpriseCore. All rights reserved.</div>
         </div>
     </footer>

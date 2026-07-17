@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
+<html class="scroll-smooth overflow-x-hidden" lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -130,7 +130,143 @@
       .animate-float {
         animation: float 4s ease-in-out infinite;
       }
-    </style>
+    
+      
+      /* ========================================================
+         SENIOR FRONTEND RESPONSIVE AUDIT & FIX RULES (Tailwind-compatible)
+         ======================================================== */
+      
+      /* Global overflow reset to ensure absolute no horizontal scrolling */
+      html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        scroll-behavior: smooth;
+      }
+      
+      /* Typography Scaling: Small Phones (<360px) | Mobile (360px+) | Tablet (768px+) | Desktop (1280px+) */
+      h1, .text-display-lg, .text-3xl {
+        font-size: 24px !important;
+        line-height: 1.25 !important;
+      }
+      @media (min-width: 360px) {
+        h1, .text-display-lg, .text-3xl {
+          font-size: 34px !important;
+          line-height: 1.2 !important;
+        }
+      }
+      @media (min-width: 768px) {
+        h1, .text-display-lg, .text-3xl {
+          font-size: 48px !important;
+          line-height: 1.15 !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        h1, .text-display-lg, .text-3xl {
+          font-size: 64px !important;
+          line-height: 1.1 !important;
+        }
+      }
+
+      h2, .text-headline-xl {
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+      }
+      @media (min-width: 360px) {
+        h2, .text-headline-xl {
+          font-size: 30px !important;
+          line-height: 1.25 !important;
+        }
+      }
+      @media (min-width: 768px) {
+        h2, .text-headline-xl {
+          font-size: 42px !important;
+          line-height: 1.2 !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        h2, .text-headline-xl {
+          font-size: 48px !important;
+          line-height: 1.2 !important;
+        }
+      }
+
+      h3, .text-headline-lg {
+        font-size: 20px !important;
+        line-height: 1.35 !important;
+      }
+      @media (min-width: 360px) {
+        h3, .text-headline-lg {
+          font-size: 26px !important;
+          line-height: 1.3 !important;
+        }
+      }
+      @media (min-width: 768px) {
+        h3, .text-headline-lg {
+          font-size: 32px !important;
+          line-height: 1.3 !important;
+        }
+      }
+
+      /* Responsive Section Padding */
+      .py-section-padding {
+        padding-top: 40px !important; /* py-10 */
+        padding-bottom: 40px !important;
+      }
+      @media (min-width: 768px) {
+        .py-section-padding {
+          padding-top: 64px !important; /* py-16 */
+          padding-bottom: 64px !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        .py-section-padding {
+          padding-top: 96px !important; /* py-24 */
+          padding-bottom: 96px !important;
+        }
+      }
+
+      /* Responsive Container Padding (px-5 on mobile, px-10 on tablet, px-20 on desktop) */
+      .px-margin-mobile {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      @media (min-width: 768px) {
+        .px-margin-mobile {
+          padding-left: 40px !important;
+          padding-right: 40px !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        .px-margin-mobile {
+          padding-left: 80px !important;
+          padding-right: 80px !important;
+        }
+      }
+
+      /* Image Responsiveness & Constraint Reset */
+      img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+      
+      /* Ensure no text overlaps or clipping inside elements */
+      p, span, a, button, input, select, textarea {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+      
+      /* Button min-height requirement & full width on mobile when inside flexible layouts */
+      a.bg-primary, button.bg-primary, .btn, input[type="submit"] {
+        min-height: 48px !important;
+      }
+      
+      /* Bento grid item height compatibility & flex layout overrides */
+      .card-hover {
+        height: auto !important;
+      }
+</style>
 </head>
 <body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
     
@@ -168,15 +304,15 @@
                     <span class="material-symbols-outlined text-[18px]">verified</span>
                     <span class="text-label-sm font-label-sm uppercase tracking-wider">Enterprise-Grade Performance</span>
                 </div>
-                <h1 class="font-display-lg text-display-lg leading-tight text-center">
+                <h1 class="font-display-lg text-3xl md:text-display-lg leading-tight text-center">
                     Architecting the Future of <span class="text-primary">Enterprise Solutions</span>
                 </h1>
                 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl text-center">
                     We deliver precision-engineered digital infrastructure that scales with your ambition. Transforming complex business challenges into seamless technological advantages.
                 </p>
-                <div class="flex flex-wrap justify-center gap-4 pt-4">
-                    <a href="request-quote.html" class="bg-primary text-on-primary px-8 py-4 rounded-xl font-headline-md text-body-md hover:shadow-xl transition-all hover:-translate-y-1 text-center inline-block">Get Started</a>
-                    <a href="case-studies.html" class="border border-outline-variant text-primary px-8 py-4 rounded-xl font-headline-md text-body-md hover:bg-surface-container-high transition-all text-center inline-block">View Portfolio</a>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4 w-full sm:w-auto">
+                    <a href="request-quote.html" class="bg-primary text-on-primary px-8 py-4 rounded-xl font-headline-md text-body-md hover:shadow-xl transition-all hover:-translate-y-1 text-center flex items-center justify-center min-h-[48px] w-full sm:w-auto">Get Started</a>
+                    <a href="case-studies.html" class="border border-outline-variant text-primary px-8 py-4 rounded-xl font-headline-md text-body-md hover:bg-surface-container-high transition-all text-center flex items-center justify-center min-h-[48px] w-full sm:w-auto">View Portfolio</a>
                 </div>
             </div>
         </div>
@@ -194,13 +330,13 @@
 
     <!-- Stats Section -->
     <section class="bg-surface-container py-20">
-        <div class="max-w-container-max mx-auto px-margin-desktop">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter text-center">
                 <div class="p-8">
                     <div class="font-display-lg text-primary mb-2" id="stat-1">10+</div>
                     <p class="font-label-md text-on-surface-variant uppercase tracking-widest">Years Experience</p>
                 </div>
-                <div class="p-8 border-x border-outline-variant/30">
+                <div class="p-8 border-y md:border-y-0 md:border-x border-outline-variant/30">
                     <div class="font-display-lg text-primary mb-2" id="stat-2">500+</div>
                     <p class="font-label-md text-on-surface-variant uppercase tracking-widest">Global Projects</p>
                 </div>
@@ -214,9 +350,9 @@
 
     <!-- Services Bento Grid -->
     <section class="py-section-padding bg-surface">
-        <div class="max-w-container-max mx-auto px-margin-desktop">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="mb-16 text-center max-w-2xl mx-auto">
-                <h2 class="font-headline-xl text-headline-xl mb-6">Strategic Digital Services</h2>
+                <h2 class="font-headline-xl text-headline-md md:text-headline-xl mb-6">Strategic Digital Services</h2>
                 <p class="text-on-surface-variant">Our core competencies are designed to address the most critical infrastructure needs of modern enterprises.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
@@ -275,11 +411,11 @@
 
     <!-- Why Choose Us -->
     <section class="py-section-padding bg-surface-container-low">
-        <div class="max-w-container-max mx-auto px-margin-desktop">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="grid lg:grid-cols-2 gap-20 items-center">
                 <div class="space-y-12">
                     <div>
-                        <h2 class="font-headline-xl text-headline-xl mb-6">Why Industry Leaders Choose EnterpriseCore</h2>
+                        <h2 class="font-headline-xl text-headline-md md:text-headline-xl mb-6">Why Industry Leaders Choose EnterpriseCore</h2>
                         <p class="text-on-surface-variant text-body-lg">We don't just build software; we engineer resilience and competitive advantage into every line of code.</p>
                     </div>
                     <div class="space-y-8">
@@ -335,7 +471,7 @@
 
     <!-- Technology Stack -->
     <section class="py-section-padding bg-surface">
-        <div class="max-w-container-max mx-auto px-margin-desktop text-center">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
             <h2 class="font-headline-lg text-headline-lg mb-12">Our Core Technology Ecosystem</h2>
             <div class="flex flex-wrap justify-center gap-8">
                 <div class="px-8 py-6 bg-surface-container-low rounded-xl border border-outline-variant/30 flex flex-col items-center gap-4 w-40 hover:bg-surface-container-high transition-colors">
@@ -368,7 +504,7 @@
 
     <!-- Testimonials Slider -->
     <section class="py-section-padding bg-surface-container-lowest overflow-hidden">
-        <div class="max-w-container-max mx-auto px-margin-desktop">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <h2 class="font-headline-lg text-headline-lg mb-16 text-center">Trusted by Industry Titans</h2>
             <div class="flex gap-gutter transition-transform duration-500 ease-in-out" id="testimonial-slider">
                 <!-- Testimonial 1 -->
@@ -425,7 +561,7 @@
 
     <!-- Contact CTA -->
     <section class="py-24 bg-surface">
-        <div class="max-w-container-max mx-auto px-margin-desktop">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="relative bg-primary rounded-[32px] overflow-hidden p-12 md:p-20 text-center">
                 <div class="absolute inset-0 opacity-10 pointer-events-none"></div>
                 <div class="relative z-10 max-w-3xl mx-auto space-y-8">
@@ -441,7 +577,7 @@
 
     <!-- Footer -->
     <footer class="bg-surface-container-lowest border-t border-outline-variant">
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
             <div class="md:col-span-2 space-y-6">
                 <h3 class="font-headline-md text-headline-md font-bold text-primary">EnterpriseCore</h3>
                 <p class="text-on-surface-variant max-w-xs">Global precision engineering for high-stakes digital environments. Delivering reliable, scalable solutions for the world's leading brands.</p>
@@ -484,7 +620,7 @@
                 </form>
             </div>
         </div>
-        <div class="max-w-container-max mx-auto px-margin-desktop py-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
             <p class="text-label-sm text-on-surface-variant">© 2024 EnterpriseCore. All rights reserved.</p>
             <div class="flex gap-8">
                 <a class="text-label-sm text-on-surface-variant hover:text-primary" href="#">Privacy Policy</a>

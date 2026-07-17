@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
+<html class="scroll-smooth overflow-x-hidden" lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -115,7 +115,143 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
-    </style>
+    
+      
+      /* ========================================================
+         SENIOR FRONTEND RESPONSIVE AUDIT & FIX RULES (Tailwind-compatible)
+         ======================================================== */
+      
+      /* Global overflow reset to ensure absolute no horizontal scrolling */
+      html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        scroll-behavior: smooth;
+      }
+      
+      /* Typography Scaling: Small Phones (<360px) | Mobile (360px+) | Tablet (768px+) | Desktop (1280px+) */
+      h1, .text-display-lg, .text-3xl {
+        font-size: 24px !important;
+        line-height: 1.25 !important;
+      }
+      @media (min-width: 360px) {
+        h1, .text-display-lg, .text-3xl {
+          font-size: 34px !important;
+          line-height: 1.2 !important;
+        }
+      }
+      @media (min-width: 768px) {
+        h1, .text-display-lg, .text-3xl {
+          font-size: 48px !important;
+          line-height: 1.15 !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        h1, .text-display-lg, .text-3xl {
+          font-size: 64px !important;
+          line-height: 1.1 !important;
+        }
+      }
+
+      h2, .text-headline-xl {
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+      }
+      @media (min-width: 360px) {
+        h2, .text-headline-xl {
+          font-size: 30px !important;
+          line-height: 1.25 !important;
+        }
+      }
+      @media (min-width: 768px) {
+        h2, .text-headline-xl {
+          font-size: 42px !important;
+          line-height: 1.2 !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        h2, .text-headline-xl {
+          font-size: 48px !important;
+          line-height: 1.2 !important;
+        }
+      }
+
+      h3, .text-headline-lg {
+        font-size: 20px !important;
+        line-height: 1.35 !important;
+      }
+      @media (min-width: 360px) {
+        h3, .text-headline-lg {
+          font-size: 26px !important;
+          line-height: 1.3 !important;
+        }
+      }
+      @media (min-width: 768px) {
+        h3, .text-headline-lg {
+          font-size: 32px !important;
+          line-height: 1.3 !important;
+        }
+      }
+
+      /* Responsive Section Padding */
+      .py-section-padding {
+        padding-top: 40px !important; /* py-10 */
+        padding-bottom: 40px !important;
+      }
+      @media (min-width: 768px) {
+        .py-section-padding {
+          padding-top: 64px !important; /* py-16 */
+          padding-bottom: 64px !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        .py-section-padding {
+          padding-top: 96px !important; /* py-24 */
+          padding-bottom: 96px !important;
+        }
+      }
+
+      /* Responsive Container Padding (px-5 on mobile, px-10 on tablet, px-20 on desktop) */
+      .px-margin-mobile {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      @media (min-width: 768px) {
+        .px-margin-mobile {
+          padding-left: 40px !important;
+          padding-right: 40px !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        .px-margin-mobile {
+          padding-left: 80px !important;
+          padding-right: 80px !important;
+        }
+      }
+
+      /* Image Responsiveness & Constraint Reset */
+      img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+      
+      /* Ensure no text overlaps or clipping inside elements */
+      p, span, a, button, input, select, textarea {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+      
+      /* Button min-height requirement & full width on mobile when inside flexible layouts */
+      a.bg-primary, button.bg-primary, .btn, input[type="submit"] {
+        min-height: 48px !important;
+      }
+      
+      /* Bento grid item height compatibility & flex layout overrides */
+      .card-hover {
+        height: auto !important;
+      }
+</style>
 </head>
 <body class="bg-surface text-on-surface antialiased">
     
@@ -146,23 +282,23 @@
 <main class="pt-[72px]">
         <!-- Hero Section -->
         <section class="relative py-section-padding bg-surface-container-lowest overflow-hidden">
-            <div class="max-w-container-max mx-auto px-margin-desktop relative z-10 text-center">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-center">
                 <span class="inline-block px-3 py-1 rounded bg-primary-container/10 text-primary font-label-sm text-label-sm uppercase tracking-wider mb-6">Success Stories</span>
-                <h1 class="font-display-lg text-display-lg text-primary mb-8 max-w-4xl mx-auto">Proven Results for Global Leaders.</h1>
+                <h1 class="font-display-lg text-3xl md:text-display-lg text-primary mb-8 max-w-4xl mx-auto">Proven Results for Global Leaders.</h1>
                 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
                     Explore how EnterpriseCore’s precision engineering and strategic solutions have transformed operational efficiency across various industries.
                 </p>
-                <div class="flex justify-center gap-12">
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12">
                     <div class="text-center">
-                        <div class="font-headline-xl text-headline-xl text-primary counter" data-target="350">0</div>
+                        <div class="font-headline-xl text-headline-md md:text-headline-xl text-primary counter" data-target="350">0</div>
                         <div class="font-label-md text-label-md text-on-surface-variant">Global Projects</div>
                     </div>
-                    <div class="text-center border-x border-outline-variant/30 px-12">
-                        <div class="font-headline-xl text-headline-xl text-primary counter" data-target="98">0</div>
+                    <div class="text-center border-y md:border-y-0 md:border-x border-outline-variant/30 py-6 md:py-0 px-0 md:px-12 w-full md:w-auto">
+                        <div class="font-headline-xl text-headline-md md:text-headline-xl text-primary counter" data-target="98">0</div>
                         <div class="font-label-md text-label-md text-on-surface-variant">Client Retention %</div>
                     </div>
                     <div class="text-center">
-                        <div class="font-headline-xl text-headline-xl text-primary counter" data-target="42">0</div>
+                        <div class="font-headline-xl text-headline-md md:text-headline-xl text-primary counter" data-target="42">0</div>
                         <div class="font-label-md text-label-md text-on-surface-variant">Industry Awards</div>
                     </div>
                 </div>
@@ -171,7 +307,7 @@
 
         <!-- Gallery & Filters -->
         <section class="py-section-padding bg-surface">
-            <div class="max-w-container-max mx-auto px-margin-desktop">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
                 <!-- Filter Bar -->
                 <div class="flex flex-wrap justify-center gap-4 mb-16">
                     <button class="filter-btn active px-8 py-3 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary hover:text-primary" data-filter="all">All Industries</button>
@@ -290,7 +426,7 @@
 
         <!-- Newsletter / CTA -->
         <section class="py-section-padding bg-surface-container-high border-y border-outline-variant/20">
-            <div class="max-w-container-max mx-auto px-margin-desktop text-center">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
                 <h2 class="font-headline-lg text-headline-lg text-primary mb-6">Drive Your Enterprise Forward</h2>
                 <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl mx-auto">Subscribe to our newsletter for exclusive industry insights and engineering breakthroughs.</p>
                 <form class="flex flex-col md:flex-row gap-4 justify-center max-w-md mx-auto" onsubmit="event.preventDefault(); alert('Subscribed to newsletter.'); this.reset();">
@@ -303,7 +439,7 @@
 
     <!-- Footer -->
     <footer class="bg-surface-container-lowest border-t border-outline-variant">
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
             <div class="md:col-span-2">
                 <div class="font-headline-md text-headline-md font-bold text-primary mb-6">EnterpriseCore</div>
                 <p class="font-body-md text-body-md text-on-surface-variant mb-6 max-w-sm">Precision engineering and strategic digital transformation for global enterprises. Building the backbone of modern industry since 2012.</p>
@@ -331,7 +467,7 @@
                 </ul>
             </div>
         </div>
-        <div class="max-w-container-max mx-auto px-margin-desktop py-8 border-t border-outline-variant/30">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/30">
             <p class="font-label-sm text-label-sm text-on-surface-variant text-center opacity-70">© 2024 EnterpriseCore. All rights reserved. Precision Engineering &amp; Governance.</p>
         </div>
     </footer>

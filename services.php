@@ -43,7 +43,7 @@ try {
 }
 ?>
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
+<html class="scroll-smooth overflow-x-hidden" lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -157,7 +157,143 @@ try {
             background-image: radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.05) 0px, transparent 50%), 
                               radial-gradient(at 100% 100%, rgba(37, 99, 235, 0.03) 0px, transparent 50%);
         }
-    </style>
+    
+      
+      /* ========================================================
+         SENIOR FRONTEND RESPONSIVE AUDIT & FIX RULES (Tailwind-compatible)
+         ======================================================== */
+      
+      /* Global overflow reset to ensure absolute no horizontal scrolling */
+      html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        scroll-behavior: smooth;
+      }
+      
+      /* Typography Scaling: Small Phones (<360px) | Mobile (360px+) | Tablet (768px+) | Desktop (1280px+) */
+      h1, .text-display-lg, .text-3xl {
+        font-size: 24px !important;
+        line-height: 1.25 !important;
+      }
+      @media (min-width: 360px) {
+        h1, .text-display-lg, .text-3xl {
+          font-size: 34px !important;
+          line-height: 1.2 !important;
+        }
+      }
+      @media (min-width: 768px) {
+        h1, .text-display-lg, .text-3xl {
+          font-size: 48px !important;
+          line-height: 1.15 !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        h1, .text-display-lg, .text-3xl {
+          font-size: 64px !important;
+          line-height: 1.1 !important;
+        }
+      }
+
+      h2, .text-headline-xl {
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+      }
+      @media (min-width: 360px) {
+        h2, .text-headline-xl {
+          font-size: 30px !important;
+          line-height: 1.25 !important;
+        }
+      }
+      @media (min-width: 768px) {
+        h2, .text-headline-xl {
+          font-size: 42px !important;
+          line-height: 1.2 !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        h2, .text-headline-xl {
+          font-size: 48px !important;
+          line-height: 1.2 !important;
+        }
+      }
+
+      h3, .text-headline-lg {
+        font-size: 20px !important;
+        line-height: 1.35 !important;
+      }
+      @media (min-width: 360px) {
+        h3, .text-headline-lg {
+          font-size: 26px !important;
+          line-height: 1.3 !important;
+        }
+      }
+      @media (min-width: 768px) {
+        h3, .text-headline-lg {
+          font-size: 32px !important;
+          line-height: 1.3 !important;
+        }
+      }
+
+      /* Responsive Section Padding */
+      .py-section-padding {
+        padding-top: 40px !important; /* py-10 */
+        padding-bottom: 40px !important;
+      }
+      @media (min-width: 768px) {
+        .py-section-padding {
+          padding-top: 64px !important; /* py-16 */
+          padding-bottom: 64px !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        .py-section-padding {
+          padding-top: 96px !important; /* py-24 */
+          padding-bottom: 96px !important;
+        }
+      }
+
+      /* Responsive Container Padding (px-5 on mobile, px-10 on tablet, px-20 on desktop) */
+      .px-margin-mobile {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      @media (min-width: 768px) {
+        .px-margin-mobile {
+          padding-left: 40px !important;
+          padding-right: 40px !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        .px-margin-mobile {
+          padding-left: 80px !important;
+          padding-right: 80px !important;
+        }
+      }
+
+      /* Image Responsiveness & Constraint Reset */
+      img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+      
+      /* Ensure no text overlaps or clipping inside elements */
+      p, span, a, button, input, select, textarea {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+      
+      /* Button min-height requirement & full width on mobile when inside flexible layouts */
+      a.bg-primary, button.bg-primary, .btn, input[type="submit"] {
+        min-height: 48px !important;
+      }
+      
+      /* Bento grid item height compatibility & flex layout overrides */
+      .card-hover {
+        height: auto !important;
+      }
+</style>
 </head>
 <body class="bg-surface text-on-surface font-body-md animate-reveal">
     
@@ -189,10 +325,10 @@ try {
         <!-- Hero Section -->
         <section class="relative min-h-[50vh] flex items-center overflow-hidden mesh-bg">
             <div class="absolute inset-0 z-0"></div>
-            <div class="relative z-10 max-w-container-max mx-auto px-margin-desktop py-section-padding w-full">
+            <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding w-full">
                 <div class="max-w-3xl">
                     <span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-label-sm font-label-sm mb-6 inline-block">OUR EXPERTISE</span>
-                    <h1 class="font-display-lg text-display-lg mb-8 tracking-tight">Solutions Tailored for Global Scale</h1>
+                    <h1 class="font-display-lg text-3xl md:text-display-lg mb-8 tracking-tight">Solutions Tailored for Global Scale</h1>
                     <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-2xl">
                         Empowering the world's most ambitious organizations with precision-engineered digital architecture and future-ready enterprise solutions.
                     </p>
@@ -202,8 +338,8 @@ try {
 
         <!-- Services Grid -->
         <section class="bg-surface-container-lowest py-section-padding">
-            <div class="max-w-container-max mx-auto px-margin-desktop">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
                     <?php foreach ($services as $service): ?>
                         <div class="service-card group bg-surface border border-outline-variant/30 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300">
                             <div class="w-12 h-12 bg-primary-container/10 text-primary rounded-lg flex items-center justify-center mb-6">
@@ -224,13 +360,13 @@ try {
 
         <!-- CTA / Architect Section -->
         <section class="bg-surface py-section-padding border-t border-outline-variant/10">
-            <div class="max-w-container-max mx-auto px-margin-desktop">
+            <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
                 <div class="bg-on-surface rounded-xl p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-gutter overflow-hidden relative">
                     <div class="absolute top-0 right-0 w-1/2 h-full opacity-20">
                         <div class="w-full h-full bg-cover" data-alt="Network grid pattern" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCr0nDVRRWLFnqej855eCkDKovHyEN69guOTdQiT2TSaZzOVxROjiXbrJBpHLLeawGsu6HgkFSJ4LqKpkcH8kgplzpSAf7JjbFmD1pFM3i6nlHW5LDLBKMCne2w-PjRSmAnv0-xdFTk8uriN5TCdMrYZrlAKYboU2XSyrmgV1nO4pP927eCPDnYx_oh5JyTsE3q_89Yew_3n4Pi4Yt-2wtCZAGB5Z1fYPCPSSNki0gZbXp26FSuBK8oSA')"></div>
                     </div>
                     <div class="relative z-10 max-w-2xl text-center md:text-left">
-                        <h2 class="font-headline-xl text-headline-xl text-on-primary mb-6">Ready to Architect Your Future?</h2>
+                        <h2 class="font-headline-xl text-headline-md md:text-headline-xl text-on-primary mb-6">Ready to Architect Your Future?</h2>
                         <p class="font-body-lg text-body-lg text-surface-variant mb-8">
                             Our lead architects are available for deep-dive consultations to assess your current landscape and define a roadmap for global scale.
                         </p>
@@ -246,7 +382,7 @@ try {
 
     <!-- Footer -->
     <footer class="bg-surface-container-lowest dark:bg-on-surface border-t border-outline-variant">
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-gutter px-margin-desktop py-section-padding max-w-container-max mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-gutter px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto">
             <div class="md:col-span-2">
                 <span class="font-headline-md text-headline-md font-bold text-primary block mb-6">EnterpriseCore</span>
                 <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
@@ -277,7 +413,7 @@ try {
                 </ul>
             </div>
         </div>
-        <div class="max-w-container-max mx-auto px-margin-desktop py-8 border-t border-outline-variant/30 text-center md:text-left">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/30 text-center md:text-left">
             <p class="font-body-md text-body-md text-on-surface-variant">© 2024 EnterpriseCore. All rights reserved.</p>
         </div>
     </footer>
